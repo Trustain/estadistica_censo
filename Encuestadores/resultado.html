@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuestador Validado</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo - favi.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resultado.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.css">
+
+    <script>
+        function obtenerParametrosURL() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                dni: params.get("dni"),
+                operativo: params.get("operativo")
+            };
+        }
+
+        async function mostrarDatos() {
+            const datos = obtenerParametrosURL();
+            
+            try {
+                const response = await fetch('encuestadores.json');
+                const encuestadores = await response.json();
+                
+                const encuestador = encuestadores.find(e => e.dni === datos.dni && e.operativo === datos.operativo);
+                
+                if (encuestador) {
+                    document.getElementById("nombre").textContent = encuestador.nombre;
+                    document.getElementById("dni").textContent = encuestador.dni;
+                    document.getElementById("operativo").textContent = encuestador.operativo_nombre;
+                    document.getElementById("rol").textContent = encuestador.rol;
+                    document.getElementById("foto").src = encuestador.foto;
+                } else {
+                    window.location.href = `no_validacion.html?dni=${datos.dni}&operativo=${datos.operativo}`;
+}
+            } catch (error) {
+                console.error("Error al cargar los datos", error);
+            }
+        }
+    </script>
+</head>
+<body onload="mostrarDatos()">
+    <div class="contenedor">
+        <div class="foto">
+            <img id="foto" src="" alt="Foto del Encuestador">
+        </div>
+        <div class="info">
+            <h2 id="nombre"></h2>
+            <p><strong>DNI:</strong> <span id="dni"></span></p>
+            <p><strong>Operativo Estadístico:</strong> <span id="operativo"></span></p>
+            <p><strong>Rol:</strong> <span id="rol"></span></p>
+        </div>
+    </div>
+    
+    <div class="contenedor">
+        <div class="info">
+            <h3><strong>VALIDACION EXITOSA</strong></h3>
+            <h4><strong>Gracias por consultar</strong></h4>
+        </div>
+        <div class="main-button">
+            <a href="/index.html"> VOLVER</a>
+        </div>
+    </div>
+
+    <div class="contacto">
+        <p><strong>Si aún tiene dudas, comuníquese con nosotros por los siguientes medios:</strong></p>
+        <p>&nbsp &nbsp <i class="fa fa-phone"></i><strong>&nbsp Teléfono:</strong> 2966 - 348962</p>
+        <p>&nbsp &nbsp <i class="fa fa-envelope"></i><strong> &nbspCorreo Electrónico:</strong> estadisticaycensos@santacruz.gob.ar</p>
+        <p>&nbsp &nbsp <i class="fa fa-map-marker"></i><strong> &nbsp Dirección:</strong> Mariano Moreno 580, Planta Alta. Río Gallegos</p>
+    </div>
+    <div class="footer">
+        <p>Sitio desarrollado por la Dirección Provincial de Estadística y Censos © 2025</p>
+    </div>
+
+</body>
+
+</html>

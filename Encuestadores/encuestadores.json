@@ -1,0 +1,155 @@
+[
+    {
+        "dni": "35570501",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Carrera Patricia",
+        "rol": "Cooridnadora",
+        "foto": "Patricia-Carrera.jpg"
+    },
+    {
+        "dni": "42499300",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Karen Salcedo",
+        "rol": "Encuestadora",
+        "foto": "Karen_Salcedo.jpg"
+    },
+    {
+        "dni": "35570676",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Romina Belazzio",
+        "rol": "Encuestadora",
+        "foto": "BELAZZIO_ROMINA.jpg"
+    },
+    {
+        "dni": "39204233",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Franco Chacon",
+        "rol": "Encuestador",
+        "foto": "CHACON_FRANCO.jpg"
+    },
+    {
+        "dni": "32003560",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Loreley Rivas",
+        "rol": "Supervisora",
+        "foto": "RIVAS_LORELEY.jpg"
+    },
+    {
+        "dni": "10898203",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Cristina Musso",
+        "rol": "Supervisora",
+        "foto": "MUSSO_CRISTINA.jpg"
+    },
+    {
+        "dni": "37202472",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Rocio Gauna",
+        "rol": "Encuestadora",
+        "foto": "GAUNA_ROCIO.jpg"
+    },
+    {
+        "dni": "46073448",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Ludmila Russo",
+        "rol": "Encuestadora",
+        "foto": "RUSSO_LUDMILA.jpg"
+    },
+    {
+        "dni": "27664595",
+        "operativo": "1",
+        "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
+        "nombre": "Vanesa Almonacid",
+        "rol": "Encuestadora",
+        "foto": "ALMONACID_VANESA.jpg"
+    },
+    {
+        "dni": "36203737",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Cynthia Ramoa",
+        "rol": "Encuestadora",
+        "foto": "CYNTHIA_RAMOA.jpg"
+    },
+    {
+        "dni": "29439992",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Celeste Pradenas",
+        "rol": "Encuestadora",
+        "foto": "CELESTE_PRADENAS.jpg"
+    },
+    {
+        "dni": "45550805",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Camila Castro",
+        "rol": "Encuestadora",
+        "foto": "CAMILA_CASTRO.jpg"
+    },
+    {
+        "dni": "17549663",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Blanca Baez",
+        "rol": "Encuestadora",
+        "foto": "BLANCA_BAEZ.jpg"
+    },
+
+    {
+        "dni": "38794786",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Ampuero Micaela",
+        "rol": "Supervisora",
+        "foto": "Micaela_Ampuero.jpg"
+    },
+    {
+        "dni": "33533033",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Nadia Silva",
+        "rol": "Supervisora",
+        "foto": "Nadia_Silva.jpg"
+    },
+    {
+        "dni": "29439992",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Rivas Tamara",
+        "rol": "Supervisora",
+        "foto": "Rivas-Tamara.jpg"
+    },
+    {
+        "dni": "35570501",
+        "operativo": "4",
+        "operativo_nombre": "Encuesta de Ocupación Hotelera (EOH)",
+        "nombre": "Carrera Patricia",
+        "rol": "Ingresadora",
+        "foto": "Patricia-Carrera.jpg"
+    },
+    {
+        "dni": "42499300",
+        "operativo": "4",
+        "operativo_nombre": "Encuesta de Ocupación Hotelera (EOH)",
+        "nombre": "Karen Salcedo",
+        "rol": "Encuestadora",
+        "foto": "Karen_Salcedo.jpg"
+    },
+    {
+        "dni": "33533033",
+        "operativo": "4",
+        "operativo_nombre": "Encuesta de Ocupación Hotelera (EOH)",
+        "nombre": "Nadia Silva",
+        "rol": "Encuestadora",
+        "foto": "Nadia_Silva.jpg"
+    }
+]

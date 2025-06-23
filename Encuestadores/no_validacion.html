@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuestador No Validado</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo - favi.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="resultado.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.css">
+
+    <script>
+    const nombresOperativos = {
+    "1": "Índice de Precios al Consumidor (IPC)",
+    "2": "Encuesta Permanente de Hogares (EPH)",
+    "3": "EPH - Resto Urbano Provincial (RUP)"
+    };
+    
+    function obtenerParametrosURL() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            dni: params.get("dni"),
+            operativo: params.get("operativo")
+        };
+    }
+
+    function mostrarDatosFallidos() {
+        const datos = obtenerParametrosURL();
+        document.getElementById("dni").textContent = datos.dni ?? "No especificado";
+        document.getElementById("operativo").textContent = nombresOperativos[datos.operativo] || "Desconocido";
+    }
+
+    window.onload = mostrarDatosFallidos;
+</script>
+    
+</head>
+
+<body onload="mostrarDatosFallidos()">
+    <div class="contenedor">
+        <div class="info">
+            <h3><strong>ENCUESTADOR NO REGISTRADO</strong></h3>
+        </div>
+        <div class="main-button">
+            <a href="/index.html"> VOLVER</a>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <div>
+            <p>El DNI y operativo estadístico no corresponde a un encuestador registrado.</p>
+            <p>Por favor, verifique los datos ingresados e intente nuevamente.</p>
+            <p><strong>&nbsp &nbsp DNI:</strong> <span id="dni"></span></p>
+            <p><strong>&nbsp &nbsp Operativo Estadístico:</strong> <span id="operativo"></span></p>
+        </div>
+    </div>
+
+    <div class="contacto">
+        <p><strong>Si aún tiene dudas, comuníquese con nosotros por los siguientes medios:</strong></p>
+        <p>&nbsp &nbsp <i class="fa fa-phone"></i><strong>&nbsp Teléfono:</strong> 2966 - 348962</p>
+        <p>&nbsp &nbsp <i class="fa fa-envelope"></i><strong> &nbspCorreo Electrónico:</strong> estadisticaycensos@santacruz.gob.ar</p>
+        <p>&nbsp &nbsp <i class="fa fa-map-marker"></i><strong> &nbsp Dirección:</strong> Mariano Moreno 580, Planta Alta. Río Gallegos</p>
+    </div>
+    <div class="footer">
+        <p>Sitio desarrollado por la Dirección Provincial de Estadística y Censos © 2025</p>
+    </div>
+
+</body>
+</html>
