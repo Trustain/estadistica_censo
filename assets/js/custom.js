@@ -139,7 +139,6 @@
 	}
 
 
-	// Menu elevator animation
 	$('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -161,7 +160,6 @@
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
 	    
-	    //smoothscroll
 	    $('.scroll-to-section a[href^="#"]').on('click', function (e) {
 	        e.preventDefault();
 	        $(document).off("scroll");
@@ -199,7 +197,6 @@
 	}
 
 
-	// Page loading animation
 	$(window).on('load', function() {
 		if($('.cover').length){
 			$('.cover').parallax({
@@ -221,7 +218,6 @@
 
 	const dropdownOpener = $('.main-nav ul.nav .has-sub > a');
 
-    // Open/Close Submenus
     if (dropdownOpener.length) {
         dropdownOpener.each(function () {
             var _this = $(this);
