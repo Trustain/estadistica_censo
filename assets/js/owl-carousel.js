@@ -1,20 +1,3 @@
-/**
- * Owl Carousel v2.3.4
- * Copyright 2013-2018 David Deutsch
- * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
- */
-/**
- * Owl carousel
- * @version 2.3.4
- * @author Bartosz Wojciechowski
- * @author David Deutsch
- * @license The MIT License (MIT)
- * @todo Lazy Load Icon
- * @todo prevent animationend bubling
- * @todo itemsScaleUp
- * @todo Test Zepto
- * @todo stagePadding calculate wrong active classes
- */
 ;(function($, window, document, undefined) {
 
 	/**
@@ -184,7 +167,7 @@
 	 * @public
 	 */
 	Owl.Defaults = {
-		items: 3,
+		items: 6,
 		loop: false,
 		center: false,
 		rewind: false,
@@ -205,7 +188,7 @@
 		startPosition: 0,
 		rtl: false,
 
-		smartSpeed: 250,
+		smartSpeed: 30,
 		fluidSpeed: false,
 		dragEndSpeed: false,
 
