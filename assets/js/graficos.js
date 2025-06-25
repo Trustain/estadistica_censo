@@ -229,7 +229,8 @@ var options = {
   ],
     chart: {
     type: 'boxPlot',
-    height: 300
+    height: '100%',
+  width: '100%'
   },
   colors: ['#008FFB', '#FEB019'],
   /*title: {
