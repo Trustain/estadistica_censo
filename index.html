@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/css/estilos_dpeyc.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 </head>
 
@@ -58,72 +59,92 @@
     </div>
   </header>
 
-  <div class="contenido-principal">
+  <div class="informacion-indicadores">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="bloques-contenido">
-            <div class="container">
-              <div class="row">
-                <div class="slider-content">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <h2>PRÓXIMAS NOVEDADES</h2>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="owl-bloques-contenido owl-carousel">
-                        <div class="item">
-                          <div class="thumb">
-                            <img src="assets/images/Glaciar PM.jpg" alt="">
-                            <h4>Novedad1</h4>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="thumb">
-                            <img src="assets/images/Glaciar PM.jpg" alt="">
-                            <h4>Novedad2</h4>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="thumb">
-                            <img src="assets/images/Glaciar PM.jpg" alt="">
-                            <h4>Novedad3</h4>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="thumb">
-                            <img src="assets/images/Glaciar PM.jpg" alt="">
-                            <h4>Novedad4</h4>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="thumb">
-                            <img src="assets/images/Glaciar PM.jpg" alt="">
-                            <h4>Novedad5</h4>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="thumb">
-                            <img src="assets/images/Glaciar PM.jpg" alt="">
-                            <h4>Novedad6</h4>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="thumb">
-                            <img src="assets/images/Glaciar PM.jpg" alt="">
-                            <h4>Novedad7</h4>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+      <div class="libro container-fluid">
+        <div class="row h-100">
+          <div class="titulo-libro text-center">
+          <h1 class="h4 mb-0">MERCADO DE TRABAJO - SANTA CRUZ</h1>
+          </div>
+          <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
+          <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
+            <div class="panel-hojas">
+              <div class="item-hoja activa" data-hoja="hoja1">
+                <div class="titulo">Tasa de Actividad y Empleo</div>
+                <div class="descripcion">Incluye información básica, como nombre, edad y contacto.
+                  Incluye información básica, como nombre, edad y contacto.
+                  Incluye información básica, como nombre, edad y contacto.
+                  Incluye información básica, como nombre, edad y contacto.
                 </div>
+              </div>
+              <div class="item-hoja" data-hoja="hoja2">
+                <div class="titulo">Resultados</div>
+                <div class="descripcion">Aquí se muestran los resultados obtenidos por cada individuo.</div>
+              </div>
+              <div class="item-hoja" data-hoja="hoja3">
+                <div class="titulo">Gráficos</div>
+                <div class="descripcion">Visualización gráfica de los datos procesados.</div>
               </div>
             </div>
           </div>
+
+          <!-- Contenido de hojas -->
+          <div class="col-12 col-lg-9 order-2 order-lg-1">
+            <div class="hojas">
+              <div class="hoja activa" id="hoja1">
+                <!-- FILA 1-->
+                <div class="row">
+                    <!-- Columna 1-->
+                    <div class="col-lg-6 mb-4">
+
+                        <!-- Bar Lateral Chart -->
+                        <div class="card shadow mb-4">
+                            <!-- Encabezado -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6>Tasa de Actividad</h6>
+                            </div>
+                            <!-- Grafico -->
+                            <div class="card-body">
+                                <div id="actividad_Chart"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Columna 2-->
+                    <div class="col-lg-6 mb-4">
+                        <!-- Bar Lateral Chart -->
+                        <div class="card shadow mb-4">
+                            <!-- Encabezado -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6>Tasa de Empleo</h6>
+                            </div>
+                            <!-- Grafico -->
+                            <div class="card-body">
+                                <div id="empleo_Chart"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="hoja" id="hoja2">
+                <h2>Resultados</h2>
+                <p>Contenido de la hoja 2...</p>
+              </div>
+              <div class="hoja" id="hoja3">
+                <h2>Gráficos</h2>
+                <p>Contenido de la hoja 3...</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+      
     </div>
   </div>
   
@@ -336,7 +357,7 @@
                                     <option value="1">Índice de Precios al Consumidor (IPC)</option>
                                     <option value="2">Encuesta Permanente de Hogares (EPH)</option>
                                     <option value="3">EPH - Resto Urbano Provincial (RUP)</option>
-                                    <option value="4">EOH - Encuesta de Ocupación Hotelera</option>
+                                    <option value="4">Encuesta de Ocupación Hotelera (EOH)</option>
                                 </select>
                             </fieldset>
                         </div>
@@ -349,6 +370,62 @@
                 </form>
             </div>
         </div>
+    </div>
+  </div>
+
+  <div class="contenido-principal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bloques-contenido">
+            <div class="container">
+              <div class="row">
+                <div class="slider-content">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <h2>PRÓXIMAS NOVEDADES</h2>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="owl-bloques-contenido owl-carousel">
+                        <div class="item">
+                          <div class="thumb">
+                            <img src="assets/images/Glaciar PM.jpg" alt="">
+                            <h4>Fichas Técnicas por Localidad</h4>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="thumb">
+                            <img src="assets/images/Glaciar PM.jpg" alt="">
+                            <h4>Visor Geoestadístico Censa</h4>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="thumb">
+                            <img src="assets/images/Glaciar PM.jpg" alt="">
+                            <h4>Bases de Datos</h4>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="thumb">
+                            <img src="assets/images/Glaciar PM.jpg" alt="">
+                            <h4>Novedad4</h4>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div class="thumb">
+                            <img src="assets/images/Glaciar PM.jpg" alt="">
+                            <h4>Novedad5</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -388,6 +465,9 @@
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/validar_encuestador.js"></script>
+  <script src="assets/js/indicadores.js"></script>
+  <!--Graficos-->
+  <script src="/assets/js/graficos.js"></script>
 
   <script>
     $(".option").click(function(){
