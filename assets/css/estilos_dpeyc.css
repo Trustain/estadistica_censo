@@ -1317,7 +1317,7 @@ Inicio
   border: 1px solid #ccc;
   padding: 10px;
   background-color: #f8f9fa;
-  /* overflow-y: auto; */
+  overflow-y: auto;
 }
 
 .item-hoja {
@@ -1366,6 +1366,7 @@ Inicio
   min-height: 320px;
 }
 
+
 /*INFORMACION*/
 
 .informacion {
@@ -1384,6 +1385,18 @@ Inicio
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.informacion .info-item {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+}
+.informacion img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*GEOESTADISTICA*/
