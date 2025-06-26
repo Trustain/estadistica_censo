@@ -1,3 +1,120 @@
+/*DEMOGRAFIA*/
+
+ var options = {
+  series: [
+    {
+      name: '2022',
+      data: [
+        { x: 'Corpen Aike', y: 15171, goals: [{ name: '2010', value: 11093, strokeColor: '#775DD0' }] },
+        { x: 'Deseado', y: 126743, goals: [{ name: '2010', value: 107630, strokeColor: '#775DD0' }] },
+        { x: 'Güer Aike', y: 137895, goals: [{ name: '2010', value: 113267, strokeColor: '#775DD0' }] },
+        { x: 'Lago Argentino', y: 25586, goals: [{ name: '2010', value: 18864, strokeColor: '#775DD0' }] },
+        { x: 'Lago Buenos Aires', y: 12606, goals: [{ name: '2010', value: 8750, strokeColor: '#775DD0' }] },
+        { x: 'Magallanes', y: 12911, goals: [{ name: '2010', value: 9202, strokeColor: '#775DD0' }] },
+        { x: 'Río Chico', y: 6314, goals: [{ name: '2010', value: 5158, strokeColor: '#775DD0' }] }
+      ]
+    }
+  ],
+  chart: {
+    height: 350,
+    type: 'bar'
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true
+    }
+  },
+  colors: ['#00E396'],
+  dataLabels: {
+    enabled: false // ❌ No etiquetas sobre las barras
+  },
+  tooltip: {
+    y: {
+      formatter: function (val) {
+        return val.toLocaleString('es-AR'); // ✅ Solo muestra el valor formateado
+      }
+    }
+  },
+  xaxis: {
+    labels: {
+      formatter: function (value) {
+        return value.toLocaleString('es-AR'); // ✅ Eje X con separador de miles
+      }
+    }
+  },
+  legend: {
+    show: true,
+    showForSingleSeries: true,
+    customLegendItems: ['2022', '2010'],
+    markers: {
+      fillColors: ['#00E396', '#775DD0']
+    }
+  }
+};
+
+
+var chart = new ApexCharts(document.querySelector("#poblacion"), options);
+chart.render();
+
+
+var options = {
+  series: [
+    {
+      name: 'Variación %',
+      data: [
+        { x: 'Deseado', y: 17.76, abs: 19113 },
+        { x: 'Güer Aike', y: 21.75, abs: 24628 },
+        { x: 'Río Chico', y: 22.41, abs: 1156 },
+        { x: 'Lago Argentino', y: 35.63, abs: 6722 },
+        { x: 'Corpen Aike', y: 36.77, abs: 4078 },
+        { x: 'Magallanes', y: 40.31, abs: 3709 },
+        { x: 'Lago Buenos Aires', y: 44.08, abs: 3856 }
+      ]
+    }
+  ],
+  chart: {
+    type: 'bar',
+    height: 350 // ✅ mismo tamaño que el gráfico anterior
+  },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '70%' // ✅ mismo ancho relativo
+    }
+  },
+  dataLabels: {
+    enabled: false // ❌ no mostrar etiquetas sobre las barras
+  },
+  tooltip: {
+    y: {
+      formatter: function (val, { series, seriesIndex, dataPointIndex, w }) {
+        const abs = w.config.series[seriesIndex].data[dataPointIndex].abs;
+        return `+${val.toFixed(2)}% (${abs.toLocaleString('es-AR')} personas)`;
+      }
+    }
+  },
+  xaxis: {
+    labels: {
+      formatter: function (val) {
+        return Math.round(val) + ' %'; // ✅ sin decimales
+      }
+    },
+    title: {
+      text: undefined // ❌ sin título de eje
+    }
+  },
+  colors: ['#00E396'], // ✅ mismo color que el gráfico anterior
+  legend: {
+    show: false
+  }
+};
+
+var chart = new ApexCharts(document.querySelector("#variacion"), options);
+chart.render();
+
+      
+/*DEMOGRAFIA*/
+
 /*TRABAJO E INGRESOS*/
 
 /* var popCanvas = $("#popChart");

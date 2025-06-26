@@ -1279,7 +1279,7 @@ Inicio
 .titulo-libro {
   display: inline-block;            /* Se ajusta al contenido */
   margin: 0 auto 10px auto;         /* Centrado horizontal, margen inferior */
-  padding: 5px 10px;                /* Espacio interno mínimo y controlado */
+  padding: 10px 5px;                /* Espacio interno mínimo y controlado */
   border-bottom: 1px solid #ccc;
   font-size: 1.25rem;
 }
@@ -1366,6 +1366,24 @@ Inicio
   min-height: 320px;
 }
 
+.panel-hojas ul li{
+  padding-left: 0px;
+  list-style-type:disc;
+  display: list-item;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+
+/* .panel-hojas .descripcion ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.panel-hojas .descripcion li {
+  display: list-item;
+} */
 
 /*INFORMACION*/
 
