@@ -112,7 +112,182 @@ var options = {
 var chart = new ApexCharts(document.querySelector("#variacion"), options);
 chart.render();
 
-      
+/*==================================================================================*/
+
+var options = {
+          series: [{
+          name: 'Santa Cruz',
+          type: 'line',
+          data: [10, 11, 16, 19, 30]
+        }, {
+          name: 'Corpen Aike',
+          type: 'line',
+          data: [24, 17, 20, 20, 25]
+        }, {
+          name: 'Deseado',
+          type: 'line',
+          data: [9, 9, 14, 16, 27]
+        }, {
+          name: 'Güer Aike',
+          type: 'line',
+          data: [8, 10, 16, 22, 37]
+        }, {
+          name: 'Lago Argentino',
+          type: 'line',
+          data: [24, 15, 17, 18, 23]
+        }, {
+          name: 'Lago Buenos Aires',
+          type: 'line',
+          data: [16, 16, 19, 22, 25]
+        }, {
+          name: 'Magallanes',
+          type: 'line',
+          data: [28, 31, 31, 23, 27]
+        }, {
+          name: 'Rio Chico',
+          type: 'line',
+          data: [22, 16, 23, 18, 24]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          stacked: false,
+        },
+        stroke: {
+          width: [4, 4, 4, 4, 4, 4, 4, 4],
+          curve: 'smooth'
+        },
+        plotOptions: {
+          bar: {
+            columnWidth: '50%'
+          }
+        },
+        
+        fill: {
+          opacity: [1],
+          gradient: {
+            inverseColors: false,
+            shade: 'light',
+            type: "vertical",
+            opacityFrom: 0.85,
+            opacityTo: 0.55,
+            stops: [0, 100, 100, 100]
+          }
+        },
+        labels: ['1980', '1991', '2001', '2010', '2022'],
+        markers: {
+          size: 0
+        },
+        // yaxis: {
+        //   title: {
+        //     text: 'Cantidad de personas por cada 100',
+        //   }
+        // },
+        tooltip: {
+          shared: true,
+          intersect: false,
+          y: {
+            formatter: function (y) {
+              if (typeof y !== "undefined") {
+                return y.toFixed(0);
+              }
+              return y;
+        
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#indiceenvejecimiento"), options);
+        chart.render();
+
+var options = {
+          series: [{
+          name: 'Santa Cruz',
+          type: 'line',
+          data: [10, 11, 16, 19, 30]
+        }, {
+          name: 'Corpen Aike',
+          type: 'line',
+          data: [24, 17, 20, 20, 25]
+        }, {
+          name: 'Deseado',
+          type: 'line',
+          data: [9, 9, 14, 16, 27]
+        }, {
+          name: 'Güer Aike',
+          type: 'line',
+          data: [8, 10, 16, 22, 37]
+        }, {
+          name: 'Lago Argentino',
+          type: 'line',
+          data: [24, 15, 17, 18, 23]
+        }, {
+          name: 'Lago Buenos Aires',
+          type: 'line',
+          data: [16, 16, 19, 22, 25]
+        }, {
+          name: 'Magallanes',
+          type: 'line',
+          data: [28, 31, 31, 23, 27]
+        }, {
+          name: 'Rio Chico',
+          type: 'line',
+          data: [22, 16, 23, 18, 24]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          stacked: false,
+        },
+        stroke: {
+          width: [4, 4, 4, 4, 4, 4, 4, 4],
+          curve: 'smooth'
+        },
+        plotOptions: {
+          bar: {
+            columnWidth: '50%'
+          }
+        },
+        
+        fill: {
+          opacity: [1],
+          gradient: {
+            inverseColors: false,
+            shade: 'light',
+            type: "vertical",
+            opacityFrom: 0.85,
+            opacityTo: 0.55,
+            stops: [0, 100, 100, 100]
+          }
+        },
+        labels: ['1980', '1991', '2001', '2010', '2022'],
+        markers: {
+          size: 0
+        },
+        // yaxis: {
+        //   title: {
+        //     text: 'Cantidad de personas por cada 100',
+        //   }
+        // },
+        tooltip: {
+          shared: true,
+          intersect: false,
+          y: {
+            formatter: function (y) {
+              if (typeof y !== "undefined") {
+                return y.toFixed(0);
+              }
+              return y;
+        
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#indicedependenciapotencial"), options);
+        chart.render();
+
 /*DEMOGRAFIA*/
 
 /*TRABAJO E INGRESOS*/

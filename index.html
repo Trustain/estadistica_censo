@@ -73,15 +73,19 @@
               <div class="item-hoja activa" data-hoja="hoja1">
                 <div class="titulo">Población</div>
                 <div class="descripcion">
-                  <ul  style="padding-left: 20px;">
+                  <!-- <ul  style="padding-left: 20px;">
                     <li>Total poblacional por departamento.</li>
                     <li>Variación poblacional absoluta y relativa intercensal.</li>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
               <div class="item-hoja" data-hoja="hoja2">
-                <div class="titulo">Resultados</div>
-                <div class="descripcion">Aquí se muestran los resultados obtenidos por cada individuo.</div>
+                <div class="titulo">Indices</div>
+                <div class="descripcion">
+                  <p>Nota: ambos gráficos son interactivos. Puede ocultar todos o algunas lineas de datos, haciendo click en el 
+                    departamento correspondiente en la leyenda.
+                  </p>
+                </div>
               </div>
               <div class="item-hoja" data-hoja="hoja3">
                 <div class="titulo">Gráficos</div>
@@ -133,9 +137,44 @@
               </div>
 
               <div class="hoja" id="hoja2">
-                <h2>Resultados</h2>
-                <p>Contenido de la hoja 2...</p>
+                <!-- FILA 1-->
+                <div class="row">
+                    <!-- Columna 1-->
+                    <div class="col-lg-6 mb-4">
+
+                        <!-- Bar Lateral Chart -->
+                        <div class="card shadow mb-4">
+                            <!-- Encabezado -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6>Indice de envejecimiento por departamento.</h6>
+                            </div>
+                            <!-- Grafico -->
+                            <div class="card-body">
+                                <div id="indiceenvejecimiento"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Columna 2-->
+                    <div class="col-lg-6 mb-4">
+                        <!-- Bar Lateral Chart -->
+                        <div class="card shadow mb-4">
+                            <!-- Encabezado -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6>Indice de dependencia potencial por departamento</h6>
+                            </div>
+                            <!-- Grafico -->
+                            <div class="card-body">
+                                <div id="indicedependenciapotencial"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
               </div>
+
               <div class="hoja" id="hoja3">
                 <h2>Gráficos</h2>
                 <p>Contenido de la hoja 3...</p>
