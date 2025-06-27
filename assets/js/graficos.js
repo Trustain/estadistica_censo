@@ -178,11 +178,35 @@ var options = {
         markers: {
           size: 0
         },
+        chart: {
+          height: 350,
+          type: 'line',
+          stacked: false,
+          toolbar: {
+            show: false // ✅ esto oculta la barra
+          }
+        },
+        colors: ['#00E396', '#008FFB', '#FEB019', '#FF4560', '#775DD0', '#3F51B5', '#F86624', '#4CAF50'],
         // yaxis: {
         //   title: {
         //     text: 'Cantidad de personas por cada 100',
         //   }
         // },
+        xaxis: {
+          title: {
+          text: 'Censos Nacionales',
+          }
+        },
+        legend: {
+          show: true,
+          position: 'bottom',
+          horizontalAlign: 'center',
+          floating: false,
+          markers: {
+            width: 12,
+            height: 12
+          },
+        },
         tooltip: {
           shared: true,
           intersect: false,
@@ -202,92 +226,123 @@ var options = {
         chart.render();
 
 var options = {
-          series: [{
-          name: 'Santa Cruz',
-          type: 'line',
-          data: [10, 11, 16, 19, 30]
-        }, {
-          name: 'Corpen Aike',
-          type: 'line',
-          data: [24, 17, 20, 20, 25]
-        }, {
-          name: 'Deseado',
-          type: 'line',
-          data: [9, 9, 14, 16, 27]
-        }, {
-          name: 'Güer Aike',
-          type: 'line',
-          data: [8, 10, 16, 22, 37]
-        }, {
-          name: 'Lago Argentino',
-          type: 'line',
-          data: [24, 15, 17, 18, 23]
-        }, {
-          name: 'Lago Buenos Aires',
-          type: 'line',
-          data: [16, 16, 19, 22, 25]
-        }, {
-          name: 'Magallanes',
-          type: 'line',
-          data: [28, 31, 31, 23, 27]
-        }, {
-          name: 'Rio Chico',
-          type: 'line',
-          data: [22, 16, 23, 18, 24]
-        }],
-          chart: {
-          height: 350,
-          type: 'line',
-          stacked: false,
-        },
-        stroke: {
-          width: [4, 4, 4, 4, 4, 4, 4, 4],
-          curve: 'smooth'
-        },
-        plotOptions: {
-          bar: {
-            columnWidth: '50%'
-          }
-        },
-        
-        fill: {
-          opacity: [1],
-          gradient: {
-            inverseColors: false,
-            shade: 'light',
-            type: "vertical",
-            opacityFrom: 0.85,
-            opacityTo: 0.55,
-            stops: [0, 100, 100, 100]
-          }
-        },
-        labels: ['1980', '1991', '2001', '2010', '2022'],
-        markers: {
-          size: 0
-        },
-        // yaxis: {
-        //   title: {
-        //     text: 'Cantidad de personas por cada 100',
-        //   }
-        // },
-        tooltip: {
-          shared: true,
-          intersect: false,
-          y: {
-            formatter: function (y) {
-              if (typeof y !== "undefined") {
-                return y.toFixed(0);
-              }
-              return y;
-        
-            }
-          }
-        }
-        };
+  series: [
+    { name: 'Santa Cruz', type: 'line', data: [10, 11, 16, 19, 30] },
+    { name: 'Corpen Aike', type: 'line', data: [24, 17, 20, 20, 25] },
+    { name: 'Deseado', type: 'line', data: [9, 9, 14, 16, 27] },
+    { name: 'Güer Aike', type: 'line', data: [8, 10, 16, 22, 37] },
+    { name: 'Lago Argentino', type: 'line', data: [24, 15, 17, 18, 23] },
+    { name: 'Lago Buenos Aires', type: 'line', data: [16, 16, 19, 22, 25] },
+    { name: 'Magallanes', type: 'line', data: [28, 31, 31, 23, 27] },
+    { name: 'Rio Chico', type: 'line', data: [22, 16, 23, 18, 24] }
+  ],
+  chart: {
+    height: 350,
+    type: 'line',
+    stacked: false
+  },
+  stroke: {
+    width: Array(8).fill(4),
+    curve: 'smooth'
+  },
+  legend: {
+    show: true,
+    position: 'bottom',
+    horizontalAlign: 'center',
+    floating: false,
+    markers: {
+      width: 12,
+      height: 12
+    },
+  },
+  fill: {
+    opacity: [1],
+    gradient: {
+      inverseColors: false,
+      shade: 'light',
+      type: "vertical",
+      opacityFrom: 0.85,
+      opacityTo: 0.55,
+      stops: [0, 100, 100, 100]
+    }
+  },
+  colors: ['#00E396', '#008FFB', '#FEB019', '#FF4560', '#775DD0', '#3F51B5', '#F86624', '#4CAF50'],
+  labels: ['1980', '1991', '2001', '2010', '2022'],
+  markers: {
+    size: 0
+  },
+  chart: {
+  height: 350,
+  type: 'line',
+  stacked: false,
+  toolbar: {
+    show: false // ✅ esto oculta la barra
+  }
+  },
+  xaxis: {
+    title: {
+    text: 'Censos Nacionales',
+    }
+  },
+  tooltip: {
+    shared: true,
+    intersect: false,
+    y: {
+      formatter: function (y) {
+        return typeof y !== "undefined" ? y.toFixed(0) : y;
+      }
+    }
+  }
+};
 
-        var chart = new ApexCharts(document.querySelector("#indicedependenciapotencial"), options);
-        chart.render();
+var chart = new ApexCharts(document.querySelector("#indicedependenciapotencial"), options);
+chart.render().then(() => {
+   const seriesToHide = [
+    'Corpen Aike',
+    'Deseado',
+    'Güer Aike',
+    'Lago Argentino',
+    'Lago Buenos Aires',
+    'Magallanes',
+    'Rio Chico'
+  ];
+  seriesToHide.forEach(name => chart.highlightSeries(name));
+});
 
+const info = document.getElementById('info-leyenda');
+
+  // 🔁 Función para reiniciar animación
+  const aplicarAnimacion = () => {
+    if (info) {
+      info.classList.remove('info-destacada'); // 1. Quita clase
+      void info.offsetWidth;                   // 2. Fuerza reflow (clave)
+      info.classList.add('info-destacada');    // 3. Vuelve a aplicar clase
+    }
+  };
+
+  aplicarAnimacion(); // 🔥 Primera animación al cargar
+
+  // ⏱ Segunda animación si no interactúan en 10 segundos
+  const animacionTardia = setTimeout(() => {
+    if (info && info.style.display !== 'none') {
+      aplicarAnimacion();
+    }
+  }, 10000);
+
+  // 🧹 Cancelar si se interactúa
+  chart.addEventListener('legendClick', () => {
+    if (info) info.style.display = 'none';
+    clearTimeout(animacionTardia);
+  });
+
+  // 🧹 Cancelar si se cierra manualmente
+  const cerrarManual = document.querySelector('.btn-close');
+  if (cerrarManual) {
+    cerrarManual.addEventListener('click', () => {
+      if (info) info.style.display = 'none';
+      clearTimeout(animacionTardia);
+    });
+  }
 /*DEMOGRAFIA*/
 
 /*TRABAJO E INGRESOS*/

@@ -80,11 +80,13 @@
                 </div>
               </div>
               <div class="item-hoja" data-hoja="hoja2">
-                <div class="titulo">Indices</div>
+                <div class="titulo">Indicadores Estructurales</div>
                 <div class="descripcion">
-                  <p>Nota: ambos gráficos son interactivos. Puede ocultar todos o algunas lineas de datos, haciendo click en el 
-                    departamento correspondiente en la leyenda.
-                  </p>
+                  <div id="info-leyenda" class="grafico-info alert alert-info text-center mx-3" role="alert">
+                    <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                    <i class="fa fa-info-circle me-1"></i>
+                    Seleccioná cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
+                  </div>
                 </div>
               </div>
               <div class="item-hoja" data-hoja="hoja3">
@@ -107,7 +109,7 @@
                         <div class="card shadow mb-4">
                             <!-- Encabezado -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6>Población censal por departamento.</h6>
+                                <h6>Población absoluta censal</h6>
                             </div>
                             <!-- Grafico -->
                             <div class="card-body">
@@ -124,7 +126,13 @@
                         <div class="card shadow mb-4">
                             <!-- Encabezado -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6>Variación poblacional intercensal</h6>
+                                <span class="metadato-tooltip">
+                                <strong>Variación poblacional intercensal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                <span class="tooltip-content">
+                                  Expresa el cambio poblacional relativo (porcentaje) y absoluto (cantidad de personas) entre el censo
+                                  nacional 2010 y el 2022.
+                                </span>
+                              </span>
                             </div>
                             <!-- Grafico -->
                             <div class="card-body">
@@ -146,7 +154,13 @@
                         <div class="card shadow mb-4">
                             <!-- Encabezado -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6>Indice de envejecimiento por departamento.</h6>
+                              <span class="metadato-tooltip">
+                                <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                <span class="tooltip-content">
+                                  <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
+                                  <strong>interpretación:</strong> Un valor más alto indica una población más envejecida.
+                                </span>
+                              </span>
                             </div>
                             <!-- Grafico -->
                             <div class="card-body">
@@ -163,11 +177,19 @@
                         <div class="card shadow mb-4">
                             <!-- Encabezado -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6>Indice de dependencia potencial por departamento</h6>
+                                <span class="metadato-tooltip">
+                                <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                <span class="tooltip-content">
+                                  <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
+                                  personas edad activa (15-64).<br>
+                                  <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
+                                  económico y social de la población activa.<br> 
+                                </span>
+                              </span>
                             </div>
                             <!-- Grafico -->
                             <div class="card-body">
-                                <div id="indicedependenciapotencial"></div>
+                              <div id="indicedependenciapotencial"></div>
                             </div>
 
                         </div>
@@ -527,6 +549,7 @@
   <script src="assets/js/indicadores.js"></script>
   <!--Graficos-->
   <script src="assets/js/graficos.js"></script>
+  <script src="assets/js/cuadros_emergentes.js"></script>
 
   <script>
     $(".option").click(function(){
