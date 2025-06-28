@@ -1291,13 +1291,16 @@ Inicio
 }
 
 .titulo-con-overlay {
-  background-color: rgba(255, 255, 255, 0.92); /* fondo blanco semitransparente */
-  display: inline-block;
+
+  font-size: clamp(1.25rem, 3vw, 2rem); /* Mínimo 1.25rem, máximo 2rem */
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: left;
   padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.92);
   border-radius: 8px;
-  font-weight: 700;
-  font-size: 1.75rem;
-  color: #222;
+  display: inline-block;
+  position: relative;
 }
 
 .libro {
