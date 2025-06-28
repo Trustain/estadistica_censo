@@ -80,19 +80,38 @@
                 </div>
               </div>
               <div class="item-hoja" data-hoja="hoja2">
-                <div class="titulo">Indicadores Estructurales</div>
+                <div class="titulo">Indices Estructurales</div>
                 <div class="descripcion">
-                  <div id="info-leyenda" class="grafico-info alert alert-info text-center mx-3" role="alert">
+                  <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
                     <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
                     <i class="fa fa-info-circle me-1"></i>
-                    Seleccioná cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
+                    Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
                   </div>
                 </div>
               </div>
               <div class="item-hoja" data-hoja="hoja3">
-                <div class="titulo">Gráficos</div>
-                <div class="descripcion">Visualización gráfica de los datos procesados.</div>
+                <div class="titulo">Pirámides de población</div>
+                <div class="descripcion">
+                  <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                    <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                    <i class="fa fa-info-circle me-1"></i>
+                    Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                  </div>
+                </div>
               </div>
+
+              <div class="item-hoja" data-hoja="hoja4">
+                <div class="titulo">Edad Mediana</div>
+                <div class="descripcion">
+                  <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                    <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                    <i class="fa fa-info-circle me-1"></i>
+                    Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
+                    zoom sobre un departamento en particular
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
 
@@ -158,7 +177,7 @@
                                 <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                 <span class="tooltip-content">
                                   <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
-                                  <strong>interpretación:</strong> Un valor más alto indica una población más envejecida.
+                                  <strong>Interpretación:</strong> Un valor más alto indica una población más envejecida.
                                 </span>
                               </span>
                             </div>
@@ -181,7 +200,7 @@
                                 <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                 <span class="tooltip-content">
                                   <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
-                                  personas edad activa (15-64).<br>
+                                  personas de edad activa (15-64).<br>
                                   <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
                                   económico y social de la población activa.<br> 
                                 </span>
@@ -198,9 +217,63 @@
               </div>
 
               <div class="hoja" id="hoja3">
-                <h2>Gráficos</h2>
-                <p>Contenido de la hoja 3...</p>
+                <!-- FILA 1-->
+                <div class="row">
+                    <!-- Columna 1-->
+                    <div class="col-lg-12 mb-4">
+
+                        <!-- Bar Lateral Chart -->
+                        <div class="card shadow mb-4">
+                            <!-- Encabezado -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                              <span class="metadato-tooltip">
+                                <strong>Comparación de Pirámides Poblacionales</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                <span class="tooltip-content">
+                                  Agregue o quite series para comparar las estructuras poblacionales por sexo y rango quinquenal de edad.<br>
+                                </span>
+                              </span>
+                            </div>
+                            <!-- Grafico -->
+                            <div class="card-body">
+                                <div id="piramide2"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
               </div>
+            
+              <div class="hoja" id="hoja4">
+                <!-- FILA 1-->
+                <div class="row">
+                    <!-- Columna 1-->
+                    <div class="col-lg-12 mb-4">
+
+                        <!-- Bar Lateral Chart -->
+                        <div class="card shadow mb-4">
+                            <!-- Encabezado -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                              <span class="metadato-tooltip">
+                                <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                <span class="tooltip-content">
+                                  <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
+                                  numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                  encima de dicho valor.
+                                </span>
+                              </span>
+                            </div>
+                            <!-- Grafico -->
+                            <div class="card-body">
+                                <div id="edad_mediana"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+
             </div>
           </div>
 

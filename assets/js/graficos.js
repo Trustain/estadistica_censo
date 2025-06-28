@@ -121,30 +121,37 @@ var options = {
           data: [10, 11, 16, 19, 30]
         }, {
           name: 'Corpen Aike',
+          hidden: true,
           type: 'line',
           data: [24, 17, 20, 20, 25]
         }, {
           name: 'Deseado',
+          hidden: true,
           type: 'line',
           data: [9, 9, 14, 16, 27]
         }, {
           name: 'Güer Aike',
+          hidden: true,
           type: 'line',
           data: [8, 10, 16, 22, 37]
         }, {
           name: 'Lago Argentino',
+          hidden: true,
           type: 'line',
           data: [24, 15, 17, 18, 23]
         }, {
           name: 'Lago Buenos Aires',
+          hidden: true,
           type: 'line',
           data: [16, 16, 19, 22, 25]
         }, {
           name: 'Magallanes',
+          hidden: true,
           type: 'line',
           data: [28, 31, 31, 23, 27]
         }, {
           name: 'Rio Chico',
+          hidden: true,
           type: 'line',
           data: [22, 16, 23, 18, 24]
         }],
@@ -187,11 +194,6 @@ var options = {
           }
         },
         colors: ['#00E396', '#008FFB', '#FEB019', '#FF4560', '#775DD0', '#3F51B5', '#F86624', '#4CAF50'],
-        // yaxis: {
-        //   title: {
-        //     text: 'Cantidad de personas por cada 100',
-        //   }
-        // },
         xaxis: {
           title: {
           text: 'Censos Nacionales',
@@ -228,13 +230,13 @@ var options = {
 var options = {
   series: [
     { name: 'Santa Cruz', type: 'line', data: [10, 11, 16, 19, 30] },
-    { name: 'Corpen Aike', type: 'line', data: [24, 17, 20, 20, 25] },
-    { name: 'Deseado', type: 'line', data: [9, 9, 14, 16, 27] },
-    { name: 'Güer Aike', type: 'line', data: [8, 10, 16, 22, 37] },
-    { name: 'Lago Argentino', type: 'line', data: [24, 15, 17, 18, 23] },
-    { name: 'Lago Buenos Aires', type: 'line', data: [16, 16, 19, 22, 25] },
-    { name: 'Magallanes', type: 'line', data: [28, 31, 31, 23, 27] },
-    { name: 'Rio Chico', type: 'line', data: [22, 16, 23, 18, 24] }
+    { name: 'Corpen Aike', hidden: true, type: 'line', data: [24, 17, 20, 20, 25] },
+    { name: 'Deseado', hidden: true, type: 'line', data: [9, 9, 14, 16, 27] },
+    { name: 'Güer Aike', hidden: true, type: 'line', data: [8, 10, 16, 22, 37] },
+    { name: 'Lago Argentino', hidden: true, type: 'line', data: [24, 15, 17, 18, 23] },
+    { name: 'Lago Buenos Aires', hidden: true, type: 'line', data: [16, 16, 19, 22, 25] },
+    { name: 'Magallanes', hidden: true, type: 'line', data: [28, 31, 31, 23, 27] },
+    { name: 'Rio Chico', hidden: true, type: 'line', data: [22, 16, 23, 18, 24] }
   ],
   chart: {
     height: 350,
@@ -276,7 +278,18 @@ var options = {
   type: 'line',
   stacked: false,
   toolbar: {
-    show: false // ✅ esto oculta la barra
+        show: false,
+        offsetX: 0,
+        offsetY: 0,
+        tools: {
+          download: true,
+          selection: true,
+          zoom: false,
+          zoomin: false,
+          zoomout: false,
+          pan: false,
+          reset: true | '<img src="/static/icons/reset.png" width="20">'
+        },
   }
   },
   xaxis: {
@@ -296,53 +309,238 @@ var options = {
 };
 
 var chart = new ApexCharts(document.querySelector("#indicedependenciapotencial"), options);
-chart.render().then(() => {
-   const seriesToHide = [
-    'Corpen Aike',
-    'Deseado',
-    'Güer Aike',
-    'Lago Argentino',
-    'Lago Buenos Aires',
-    'Magallanes',
-    'Rio Chico'
-  ];
-  seriesToHide.forEach(name => chart.highlightSeries(name));
-});
+chart.render()
 
-const info = document.getElementById('info-leyenda');
+const infos = document.querySelectorAll('.info-leyenda');
 
-  // 🔁 Función para reiniciar animación
-  const aplicarAnimacion = () => {
-    if (info) {
-      info.classList.remove('info-destacada'); // 1. Quita clase
-      void info.offsetWidth;                   // 2. Fuerza reflow (clave)
-      info.classList.add('info-destacada');    // 3. Vuelve a aplicar clase
-    }
-  };
+const aplicarAnimacion = (elemento) => {
+  elemento.classList.remove('info-destacada');
+  void elemento.offsetWidth;
+  elemento.classList.add('info-destacada');
+};
 
-  aplicarAnimacion(); // 🔥 Primera animación al cargar
+infos.forEach(info => {
+  aplicarAnimacion(info);
 
-  // ⏱ Segunda animación si no interactúan en 10 segundos
   const animacionTardia = setTimeout(() => {
-    if (info && info.style.display !== 'none') {
-      aplicarAnimacion();
+    if (info.style.display !== 'none') {
+      aplicarAnimacion(info);
     }
   }, 10000);
 
-  // 🧹 Cancelar si se interactúa
-  chart.addEventListener('legendClick', () => {
-    if (info) info.style.display = 'none';
-    clearTimeout(animacionTardia);
-  });
-
-  // 🧹 Cancelar si se cierra manualmente
-  const cerrarManual = document.querySelector('.btn-close');
-  if (cerrarManual) {
-    cerrarManual.addEventListener('click', () => {
-      if (info) info.style.display = 'none';
+  // Cancelar si se hace clic en leyenda (esto debe estar dentro del contexto del gráfico)
+  if (typeof chart !== 'undefined') {
+    chart.addEventListener('legendClick', () => {
+      info.style.display = 'none';
       clearTimeout(animacionTardia);
     });
   }
+
+  // Cierre manual
+  const cerrarManual = info.querySelector('.btn-close');
+  if (cerrarManual) {
+    cerrarManual.addEventListener('click', () => {
+      info.style.display = 'none';
+      clearTimeout(animacionTardia);
+    });
+  }
+});
+
+/*PIRAMIDES DE POBLACION*/
+
+var options = {
+  series: [
+    {
+      name: 'Hombres - Santa Cruz',
+      data: [0.4, 0.65, 0.76, 0.88, 1.5, 2.1, 2.9, 3.8, 3.9, 4.2, 4, 4.3, 4.1, 4.2, 4.5, 3.9, 3.5, 3]
+    },
+    {
+      name: 'Mujeres - Santa Cruz',
+      data: [-0.8, -1.05, -1.06, -1.18, -1.4, -2.2, -2.85, -3.7, -3.96, -4.22, -4.3, -4.4, -4.1, -4, -4.1, -3.4, -3.1, -2.8]
+    },
+    {
+      name: 'Hombres - Corpen Aike', hidden: true,
+      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
+    },
+    {
+      name: 'Mujeres - Corpen Aike', hidden: true,
+      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+    },
+    {
+      name: 'Hombres - Deseado', hidden: true,
+      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
+    },
+    {
+      name: 'Mujeres - Deseado', hidden: true,
+      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+    },
+    {
+      name: 'Hombres - Güer Aike', hidden: true,
+      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
+    },
+    {
+      name: 'Mujeres - Güer Aike', hidden: true,
+      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+    },
+    {
+      name: 'Hombres - Lago Argentino', hidden: true,
+      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
+    },
+    {
+      name: 'Mujeres - Lago Argentino', hidden: true,
+      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+    },
+    {
+      name: 'Hombres - Lago Bs. As.', hidden: true,
+      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
+    },
+    {
+      name: 'Mujeres - Lago Bs. As.', hidden: true,
+      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+    },
+    {
+      name: 'Hombres - Magallanes', hidden: true,
+      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
+    },
+    {
+      name: 'Mujeres - Magallanes', hidden: true,
+      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+    },
+    {
+      name: 'Hombres - Rio Chico', hidden: true,
+      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
+    },
+    {
+      name: 'Mujeres - Rio Chico', hidden: true,
+      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '80%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['85+', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'right'
+  }
+};
+var chart = new ApexCharts(document.querySelector("#piramide2"), options);
+        chart.render();
+
+/*EDAD MEDIANA*/
+var options = {
+          series: [{
+          name: 'Total de población',
+          type: 'column',
+          data: [31, 29, 30, 32, 31, 30, 29, 29]
+        }, {
+          name: 'Mujer/Femenino',
+          type: 'column',
+          data: [31, 30, 31, 32, 32, 30, 30, 29]
+        }, {
+          name: 'Varón/Masculino',
+          type: 'column',
+          data: [30, 29, 30, 31, 31, 30, 29, 29]
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          stacked: false,
+        },
+        stroke: {
+          width: [0, 2, 5],
+          curve: 'smooth'
+        },
+        plotOptions: {
+          bar: {
+            columnWidth: '50%'
+          }
+        },
+        
+        fill: {
+          opacity: [1, 1, 1],
+          gradient: {
+            inverseColors: false,
+            shade: 'light',
+            type: "vertical",
+            opacityFrom: 0.85,
+            opacityTo: 0.55,
+            stops: [0, 100, 100, 100]
+          }
+        },
+        labels: ['Santa Cruz', 'Corpen Aike', 'Deseado', 'Güer Aike', 'Lago Argentino', 'Lago Bs. As.', 'Magallnes', 'Rio Chico'],
+        markers: {
+          size: 0
+        },
+        xaxis: {
+          type: 'category'
+        },
+        yaxis: {
+          title: {
+            text: 'Edad',
+          }
+        },
+        tooltip: {
+          shared: true,
+          intersect: false,
+          y: {
+            formatter: function (y) {
+              if (typeof y !== "undefined") {
+                return y.toFixed(0) + " points";
+              }
+              return y;
+        
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#edad_mediana"), options);
+        chart.render();
 /*DEMOGRAFIA*/
 
 /*TRABAJO E INGRESOS*/
