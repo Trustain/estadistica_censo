@@ -65,215 +65,679 @@
       <div class="libro container-fluid">
         <div class="row h-100">
           <div class="titulo-libro text-center">
-          <h1 class="h4 fw-bold">REconocernos santacruceños</h1>
-          </div>
-          <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
-          <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
-            <div class="panel-hojas">
-              <div class="item-hoja activa" data-hoja="hoja1">
-                <div class="titulo">Población</div>
-                <div class="descripcion">
-                  <!-- <ul  style="padding-left: 20px;">
-                    <li>Total poblacional por departamento.</li>
-                    <li>Variación poblacional absoluta y relativa intercensal.</li>
-                  </ul> -->
-                </div>
+            <div class="titulo-libro-con-fondo">
+              <h1 class="titulo-con-overlay">REconocernos Santacruceños</h1>
+            </div>
+            <div class="barra-libros mt-0 mb-0">
+              <div class="nav-libros-horizontal d-flex gap-2">
+                <button class="pestana-libro activo" data-libro="libro1">DEMOGRAFIA</button>
+                <button class="pestana-libro" data-libro="libro2">SALUD</button>
+                <button class="pestana-libro" data-libro="libro3">PREVISION SOCIAL</button>
               </div>
-              <div class="item-hoja" data-hoja="hoja2">
-                <div class="titulo">Indices Estructurales</div>
-                <div class="descripcion">
-                  <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
-                    <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
-                    <i class="fa fa-info-circle me-1"></i>
-                    Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
-                  </div>
-                </div>
-              </div>
-              <div class="item-hoja" data-hoja="hoja3">
-                <div class="titulo">Pirámides de población</div>
-                <div class="descripcion">
-                  <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
-                    <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
-                    <i class="fa fa-info-circle me-1"></i>
-                    Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
-                  </div>
-                </div>
-              </div>
-
-              <div class="item-hoja" data-hoja="hoja4">
-                <div class="titulo">Edad Mediana</div>
-                <div class="descripcion">
-                  <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
-                    <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
-                    <i class="fa fa-info-circle me-1"></i>
-                    Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
-                    zoom sobre un departamento en particular
-                  </div>
-                </div>
-              </div>
-              
             </div>
           </div>
 
-          <!-- Contenido de hojas -->
-          <div class="col-12 col-lg-9 order-2 order-lg-1">
-            <div class="hojas">
-              <div class="hoja activa" id="hoja1">
-                <!-- FILA 1-->
-                <div class="row">
-                    <!-- Columna 1-->
-                    <div class="col-lg-6 mb-4">
-
-                        <!-- Bar Lateral Chart -->
-                        <div class="card shadow mb-4">
-                            <!-- Encabezado -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6>Población absoluta censal</h6>
-                            </div>
-                            <!-- Grafico -->
-                            <div class="card-body">
-                                <div id="poblacion"></div>
-                            </div>
-
+          <div class="libro-contenedor" id="libro1">
+            <div class="libro container-fluid">
+              <div class="row h-100">
+                <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
+                <div class="col-12 col-lg-3 order-1 order-lg-2 mb-6.3 mb-lg-0">
+                  
+                  <div class="panel-hojas">
+                    <div class="item-hoja activa" data-hoja="hoja1">
+                      <div class="titulo">Población</div>
+                      <div class="descripcion">
+                        <!-- <ul  style="padding-left: 20px;">
+                          <li>Total poblacional por departamento.</li>
+                          <li>Variación poblacional absoluta y relativa intercensal.</li>
+                        </ul> -->
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja2">
+                      <div class="titulo">Indices Estructurales</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
                         </div>
-
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja3">
+                      <div class="titulo">Pirámides de población</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                        </div>
+                      </div>
                     </div>
 
-                    <!-- Columna 2-->
-                    <div class="col-lg-6 mb-4">
-                        <!-- Bar Lateral Chart -->
-                        <div class="card shadow mb-4">
-                            <!-- Encabezado -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <span class="metadato-tooltip">
-                                <strong>Variación poblacional intercensal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
-                                <span class="tooltip-content">
-                                  Expresa el cambio poblacional relativo (porcentaje) y absoluto (cantidad de personas) entre el censo
-                                  nacional 2010 y el 2022.
-                                </span>
-                              </span>
-                            </div>
-                            <!-- Grafico -->
-                            <div class="card-body">
-                                <div id="variacion"></div>
-                            </div>
-
+                    <div class="item-hoja" data-hoja="hoja4">
+                      <div class="titulo">Edad Mediana</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
+                          zoom sobre un departamento en particular
                         </div>
+                      </div>
                     </div>
+                    
+                  </div>
+                </div>
+
+                <!-- Contenido de hojas -->
+                <div class="col-12 col-lg-9 order-2 order-lg-1">
+                  <div class="hojas">
+                    <div class="hoja activa" id="hoja1">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Población absoluta censal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Indica la cantidad de personas en el censo nacional 2010 y el 2022.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="poblacion"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Variación poblacional intercensal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Expresa el cambio poblacional relativo (porcentaje) y absoluto (cantidad de personas) entre el censo
+                                        nacional 2010 y el 2022.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="variacion"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja2">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
+                                        <strong>Interpretación:</strong> Un valor más alto indica una población más envejecida.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="indiceenvejecimiento"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
+                                        personas de edad activa (15-64).<br>
+                                        <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
+                                        económico y social de la población activa.<br> 
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                    <div id="indicedependenciapotencial"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja3">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Comparación de Pirámides Poblacionales</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Agregue o quite series para comparar las estructuras poblacionales por sexo y rango quinquenal de edad.<br>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramide2"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="hoja" id="hoja4">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
+                                        numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                        encima de dicho valor.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="edad_mediana"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div class="hoja" id="hoja2">
-                <!-- FILA 1-->
-                <div class="row">
-                    <!-- Columna 1-->
-                    <div class="col-lg-6 mb-4">
-
-                        <!-- Bar Lateral Chart -->
-                        <div class="card shadow mb-4">
-                            <!-- Encabezado -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                              <span class="metadato-tooltip">
-                                <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
-                                <span class="tooltip-content">
-                                  <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
-                                  <strong>Interpretación:</strong> Un valor más alto indica una población más envejecida.
-                                </span>
-                              </span>
-                            </div>
-                            <!-- Grafico -->
-                            <div class="card-body">
-                                <div id="indiceenvejecimiento"></div>
-                            </div>
-
+          <div class="libro-contenedor d-none" id="libro2">
+            <div class="libro container-fluid">
+              <div class="row h-100">
+                <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
+                <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
+                  <div class="panel-hojas">
+                    <div class="item-hoja activa" data-hoja="hoja1">
+                      <div class="titulo">Población</div>
+                      <div class="descripcion">
+                        <!-- <ul  style="padding-left: 20px;">
+                          <li>Total poblacional por departamento.</li>
+                          <li>Variación poblacional absoluta y relativa intercensal.</li>
+                        </ul> -->
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja2">
+                      <div class="titulo">Indices Estructurales</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
                         </div>
-
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja3">
+                      <div class="titulo">Pirámides de población</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                        </div>
+                      </div>
                     </div>
 
-                    <!-- Columna 2-->
-                    <div class="col-lg-6 mb-4">
-                        <!-- Bar Lateral Chart -->
-                        <div class="card shadow mb-4">
-                            <!-- Encabezado -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <span class="metadato-tooltip">
-                                <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
-                                <span class="tooltip-content">
-                                  <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
-                                  personas de edad activa (15-64).<br>
-                                  <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
-                                  económico y social de la población activa.<br> 
-                                </span>
-                              </span>
-                            </div>
-                            <!-- Grafico -->
-                            <div class="card-body">
-                              <div id="indicedependenciapotencial"></div>
-                            </div>
-
+                    <div class="item-hoja" data-hoja="hoja4">
+                      <div class="titulo">Edad Mediana</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
+                          zoom sobre un departamento en particular
                         </div>
+                      </div>
                     </div>
+                    
+                  </div>
+                </div>
+
+                <!-- Contenido de hojas -->
+                <div class="col-12 col-lg-9 order-2 order-lg-1">
+                  <div class="hojas">
+                    <div class="hoja activa" id="hoja1">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Población absoluta censal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Indica la cantidad de personas en el censo nacional 2010 y el 2022.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="poblacion"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Variación poblacional intercensal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Expresa el cambio poblacional relativo (porcentaje) y absoluto (cantidad de personas) entre el censo
+                                        nacional 2010 y el 2022.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="variacion"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja2">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
+                                        <strong>Interpretación:</strong> Un valor más alto indica una población más envejecida.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="indiceenvejecimiento"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
+                                        personas de edad activa (15-64).<br>
+                                        <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
+                                        económico y social de la población activa.<br> 
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                    <div id="indicedependenciapotencial"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja3">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Comparación de Pirámides Poblacionales</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Agregue o quite series para comparar las estructuras poblacionales por sexo y rango quinquenal de edad.<br>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramide2"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="hoja" id="hoja4">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
+                                        numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                        encima de dicho valor.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="edad_mediana"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div class="hoja" id="hoja3">
-                <!-- FILA 1-->
-                <div class="row">
-                    <!-- Columna 1-->
-                    <div class="col-lg-12 mb-4">
-
-                        <!-- Bar Lateral Chart -->
-                        <div class="card shadow mb-4">
-                            <!-- Encabezado -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                              <span class="metadato-tooltip">
-                                <strong>Comparación de Pirámides Poblacionales</strong><i class="fa fa-info-circle me-1 info-icon"></i>
-                                <span class="tooltip-content">
-                                  Agregue o quite series para comparar las estructuras poblacionales por sexo y rango quinquenal de edad.<br>
-                                </span>
-                              </span>
-                            </div>
-                            <!-- Grafico -->
-                            <div class="card-body">
-                                <div id="piramide2"></div>
-                            </div>
-
-                        </div>
-
+          <div class="libro-contenedor d-none" id="libro3">
+            <div class="libro container-fluid">
+              <div class="row h-100">
+                <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
+                <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
+                  <div class="panel-hojas">
+                    <div class="item-hoja activa" data-hoja="hoja1">
+                      <div class="titulo">Población</div>
+                      <div class="descripcion">
+                        <!-- <ul  style="padding-left: 20px;">
+                          <li>Total poblacional por departamento.</li>
+                          <li>Variación poblacional absoluta y relativa intercensal.</li>
+                        </ul> -->
+                      </div>
                     </div>
+                    <div class="item-hoja" data-hoja="hoja2">
+                      <div class="titulo">Indices Estructurales</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja3">
+                      <div class="titulo">Pirámides de población</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item-hoja" data-hoja="hoja4">
+                      <div class="titulo">Edad Mediana</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
+                          zoom sobre un departamento en particular
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <!-- Contenido de hojas -->
+                <div class="col-12 col-lg-9 order-2 order-lg-1">
+                  <div class="hojas">
+                    <div class="hoja activa" id="hoja1">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Población absoluta censal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Indica la cantidad de personas en el censo nacional 2010 y el 2022.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="poblacion"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Variación poblacional intercensal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Expresa el cambio poblacional relativo (porcentaje) y absoluto (cantidad de personas) entre el censo
+                                        nacional 2010 y el 2022.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="variacion"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja2">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
+                                        <strong>Interpretación:</strong> Un valor más alto indica una población más envejecida.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="indiceenvejecimiento"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
+                                        personas de edad activa (15-64).<br>
+                                        <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
+                                        económico y social de la población activa.<br> 
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                    <div id="indicedependenciapotencial"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja3">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Comparación de Pirámides Poblacionales</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Agregue o quite series para comparar las estructuras poblacionales por sexo y rango quinquenal de edad.<br>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramide2"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="hoja" id="hoja4">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
+                                        numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                        encima de dicho valor.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="edad_mediana"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
-            
-              <div class="hoja" id="hoja4">
-                <!-- FILA 1-->
-                <div class="row">
-                    <!-- Columna 1-->
-                    <div class="col-lg-12 mb-4">
-
-                        <!-- Bar Lateral Chart -->
-                        <div class="card shadow mb-4">
-                            <!-- Encabezado -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                              <span class="metadato-tooltip">
-                                <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
-                                <span class="tooltip-content">
-                                  <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
-                                  numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
-                                  encima de dicho valor.
-                                </span>
-                              </span>
-                            </div>
-                            <!-- Grafico -->
-                            <div class="card-body">
-                                <div id="edad_mediana"></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-              </div>
-
             </div>
           </div>
 

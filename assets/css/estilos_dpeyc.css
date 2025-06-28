@@ -1271,45 +1271,52 @@ Inicio
 } */
 
 .informacion-indicadores {
-  padding-top: 100px;
-  padding-bottom: 20px;
-  background-color: #d4f3ee;
+  padding-top: 90px;
+  padding-bottom: 0px;
+  background-color: #fff;
   border-bottom: 1px solid #eee;
 }
 
-.titulo-libro {
-  display: inline-block;            /* Se ajusta al contenido */
-  margin: 0 auto 10px auto;         /* Centrado horizontal, margen inferior */
-  padding: 10px 5px;                /* Espacio interno mínimo y controlado */
-  border-bottom: 1px solid #ccc;
-  font-size: 1.25rem;
+.titulo-libro-con-fondo {
+  background-image: url('/assets/images/fondo_censo.jpg');
+  background-size: 100% auto;         /* ✔️ ajusta al ancho del div */
+  background-repeat: no-repeat;       /* ✔️ no repite */
+  background-position: center top;    /* ✔️ alineado arriba y centrado */
+  background-color: #f4f4f4;          /* por si sobra fondo */
+  padding: 0rem;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.titulo-con-overlay {
+  background-color: rgba(255, 255, 255, 0.92); /* fondo blanco semitransparente */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #222;
 }
 
 .libro {
   width: 100%;
   height: auto;
   overflow: visible;
-  background-color: #fff;
+  background-color: #CBE6E4; /* celeste claro como ya usás */
   display: flex;
   flex-direction: column;
+  border: 1px solid #dbe9e8;       /* borde claro */
+  border-radius: 12px;             /* esquinas suaves */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* sombra tenue */
+  padding: 1rem;                   /* separación interna */
 }
 
 .libro .row {
   height: auto !important;
   flex-wrap: wrap;
 }
-
-/* .libro {
-  width: 80vw;
-  height: 80vh;
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
 
 /* Panel lateral (derecho o superior en móvil) */
 .panel-hojas {
@@ -1323,9 +1330,18 @@ Inicio
 
 .item-hoja {
   cursor: pointer;
-  padding: 10px;
   border-bottom: 1px solid #ddd;
-  transition: background-color 0.3s;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.item-hoja.activa {
+  background-color: #e2ecf9; /* tono más oscuro pero suave e2ecf9 - e9ecef - dee2e6*/
+  border-left: 5px solid #0d6efd;
+  font-weight: 600;
 }
 
 .item-hoja:hover {
@@ -1410,6 +1426,132 @@ Inicio
   animation: pulse 1.5s ease-out;
   animation-iteration-count: 2;
 }
+
+/* Barra de pestañas horizontal */
+.nav-libros-horizontal {
+  justify-content: flex-start; /* Alineadas a la izquierda */
+}
+
+/* Pestañas estilo Excel */
+.pestana-libro {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+  font-size:0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.pestana-libro:hover {
+  background-color: #d5d5d5;
+}
+
+.pestana-libro.activo {
+  background-color: #fff;
+  border-bottom: 3px solid #0d6efd;
+  color: #0d6efd;
+}
+
+/* Colores base */
+.pestana-libro[data-libro="libro1"] {
+  background-color: #BEE3F8;
+  color: #003366;
+}
+.pestana-libro[data-libro="libro1"].activo {
+  background-color: #ffffff;
+  border-bottom: 3px solid #3399cc;
+  color: #0077cc;
+}
+
+.pestana-libro[data-libro="libro2"] {
+  background-color: #FEF6D8;
+  color: #5c4d00;
+}
+.pestana-libro[data-libro="libro2"].activo {
+  background-color: #ffffff;
+  border-bottom: 3px solid #e6b800;
+  color: #b88a00;
+}
+
+.pestana-libro[data-libro="libro3"] {
+  background-color: #EADCF8;
+  color: #4b006e;
+}
+.pestana-libro[data-libro="libro3"].activo {
+  background-color: #ffffff;
+  border-bottom: 3px solid #9c5cd4;
+  color: #702dbb;
+}
+
+/* === ESTILO GENERAL PARA CONTENEDOR DE LIBROS === */
+.libro {
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* === DEMOGRAFÍA (libro1) === */
+#libro1,
+#libro1 .libro {
+  background-color: #eaf4fb;
+  border-color: #cce1ef;
+}
+
+#libro1 .card-header {
+  background-color: #3399cc;
+  color: #000000;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#libro1 .card-body {
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+}
+
+/* === EDUCACIÓN (libro2) === */
+#libro2,
+#libro2 .libro {
+  background-color: #fef6e4;
+  border-color: #f2e0b3;
+}
+
+#libro2 .card-header {
+  background-color: #e6b800;
+  color: #000000;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#libro2 .card-body {
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+}
+
+/* === TRABAJO (libro3) === */
+#libro3,
+#libro3 .libro {
+  background-color: #f3e8ff;
+  border-color: #D5D0E4;
+}
+
+#libro3 .card-header {
+  background-color: #9c5cd4;
+  color: #000000;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#libro3 .card-body {
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+}
+
+
 /* CUADROS EMERGENTES*/
 .metadato-tooltip {
   position: relative;
@@ -1421,7 +1563,7 @@ Inicio
 }
 
 .metadato-tooltip .info-icon {
-  color: #0d6efd;
+  color: #fff;
   font-size: 1rem;
 }
 

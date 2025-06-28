@@ -13,3 +13,18 @@ items.forEach(item => {
     document.getElementById(idHoja).classList.add("activa");
   });
 });
+
+document.querySelectorAll('.pestana-libro').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Cambiar clase activa
+    document.querySelectorAll('.pestana-libro').forEach(b => b.classList.remove('activo'));
+    btn.classList.add('activo');
+
+    // Mostrar contenido correspondiente
+    const libroId = btn.getAttribute('data-libro');
+    document.querySelectorAll('.libro-contenedor').forEach(libro => {
+      libro.classList.add('d-none');
+    });
+    document.getElementById(libroId).classList.remove('d-none');
+  });
+});
