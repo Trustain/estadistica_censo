@@ -419,7 +419,7 @@ var options = {
   chart: {
     type: 'bar',
     height: 350,
-    stacked: true
+    stacked: false
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
   plotOptions: {
@@ -434,6 +434,16 @@ var options = {
   dataLabels: {
     enabled: false
   },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  ],
   stroke: {
     width: 1,
     colors: ["#fff"]
@@ -471,6 +481,58 @@ var options = {
 var chart = new ApexCharts(document.querySelector("#piramide2"), options);
         chart.render();
 
+// Mapeo de jurisdicciones a sus pares de series (Hombres y Mujeres)
+const jurisdicciones = {
+  'Santa Cruz': ['Hombres - Santa Cruz', 'Mujeres - Santa Cruz'],
+  'Corpen Aike': ['Hombres - Corpen Aike', 'Mujeres - Corpen Aike'],
+  'Deseado': ['Hombres - Deseado', 'Mujeres - Deseado'],
+  'Güer Aike': ['Hombres - Güer Aike', 'Mujeres - Güer Aike'],
+  'Lago Argentino': ['Hombres - Lago Argentino', 'Mujeres - Lago Argentino'],
+  'Lago Bs. As.': ['Hombres - Lago Bs. As.', 'Mujeres - Lago Bs. As.'],
+  'Magallanes': ['Hombres - Magallanes', 'Mujeres - Magallanes'],
+  'Rio Chico': ['Hombres - Rio Chico', 'Mujeres - Rio Chico']
+};
+
+// Lista de jurisdicciones actualmente activas
+let jurisdiccionesActivas = [];
+
+// Agregá esto luego de chart.render()
+chart.render().then(() => {
+  chart.addEventListener('legendClick', function(event, chartContext, config) {
+    const serieClickeada = chart.w.globals.seriesNames[config.seriesIndex];
+
+    // Buscar la jurisdicción correspondiente
+    let jurisdiccionSeleccionada = null;
+    for (const [nombre, pares] of Object.entries(jurisdicciones)) {
+      if (pares.includes(serieClickeada)) {
+        jurisdiccionSeleccionada = nombre;
+        break;
+      }
+    }
+
+    if (!jurisdiccionSeleccionada) return;
+
+    const yaActiva = jurisdiccionesActivas.includes(jurisdiccionSeleccionada);
+
+    if (yaActiva) {
+      // Si ya estaba activa, la removemos (se apaga)
+      jurisdiccionesActivas = jurisdiccionesActivas.filter(j => j !== jurisdiccionSeleccionada);
+    } else {
+      // Si no estaba activa, controlamos el límite
+      if (jurisdiccionesActivas.length >= 2) {
+        mostrarAlerta("Solo se pueden comparar dos jurisdicciones a la vez.");
+        // Anulamos la acción automática de ApexCharts
+        event.preventDefault();
+        return;
+      }
+
+      // Activamos la nueva jurisdicción
+      jurisdiccionesActivas.push(jurisdiccionSeleccionada);
+    }
+  });
+});
+
+
 /*EDAD MEDIANA*/
 var options = {
           series: [{
@@ -497,7 +559,7 @@ var options = {
         },
         plotOptions: {
           bar: {
-            columnWidth: '50%'
+            columnWidth: '70%'
           }
         },
         
@@ -520,6 +582,17 @@ var options = {
           type: 'category'
         },
         yaxis: {
+           labels: {
+            style: {
+              fontSize: '12px'
+            }
+          },
+          axisTicks: {
+            show: false
+          },
+          axisBorder: {
+            show: false
+          },
           title: {
             text: 'Edad',
           }

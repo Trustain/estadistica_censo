@@ -1278,7 +1278,7 @@ Inicio
 }
 
 .titulo-libro-con-fondo {
-  background-image: url('/assets/images/fondo_censo.jpg');
+  background-image: url(../images/fondo_censo.jpg);
   background-size: 100% auto;         /* ✔️ ajusta al ancho del div */
   background-repeat: no-repeat;       /* ✔️ no repite */
   background-position: center top;    /* ✔️ alineado arriba y centrado */
