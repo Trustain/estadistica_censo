@@ -109,7 +109,7 @@
                         <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
                           <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
                           <i class="fa fa-info-circle me-1"></i>
-                          Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                          Presioná en el nombre de una serie de la leyenda para agregarla o quitarla de la pirámide.
                         </div>
                       </div>
                     </div>
@@ -120,8 +120,8 @@
                         <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
                           <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
                           <i class="fa fa-info-circle me-1"></i>
-                          Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
-                          zoom sobre un departamento en particular
+                          Presioná en el nombre de una serie de la leyenda para agregarla o quitarla del gráfico; o bien realizá 
+                          zoom sobre un departamento en particular.
                         </div>
                       </div>
                     </div>
@@ -145,7 +145,7 @@
                                       <span class="metadato-tooltip">
                                       <strong>Población absoluta censal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Indica la cantidad de personas en el censo nacional 2010 y el 2022.
+                                        Indica la cantidad de personas en el censo nacional 2010 (barra verde) y el 2022 (línea violeta).
                                       </span>
                                     </span>
                                   </div>
@@ -236,31 +236,234 @@
                     </div>
 
                     <div class="hoja" id="hoja3">
-                      <!-- FILA 1-->
+                      <!-- FILA 1 SANTA CRUZ Y CORPEN AIKE-->
                       <div class="row">
                           <!-- Columna 1-->
-                          <div class="col-lg-12 mb-4">
+                          <div class="col-lg-6 mb-4">
 
                               <!-- Bar Lateral Chart -->
                               <div class="card shadow mb-4">
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <span class="metadato-tooltip">
-                                      <strong>Comparación de Pirámides Poblacionales</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Santa Cruz - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Agregue o quite series para comparar las estructuras poblacionales por sexo y rango quinquenal de edad.<br>
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
                                       </span>
                                     </span>
                                   </div>
                                   <!-- Grafico -->
                                   <div class="card-body">
-                                      <div id="piramide2"></div>
+                                      <div id="piramideSC"></div>
                                   </div>
 
                               </div>
 
                           </div>
+
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Corpen Aike - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramideCA"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
                       </div>
+
+                      <!-- FILA 2- DESEADO Y GÜER AIKE-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Deseado - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramideDeseado"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Güer Aike - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramideGA"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                      </div>
+
+                      <!-- FILA 3 -- LAGO ARGENTINO Y LAGO BUENOS AIRES-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Lago Argentino - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramideLA"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Lago Buenos Aires - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramideLBA"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                      </div>
+
+                      <!-- FILA 4 -- MAGALLANES-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Magallanes - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramideMagallanes"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Rio Chico - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                       <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        <br>La forma de la pirámide permite identificar características de la estructura poblaciional.
+                                      </span>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramideRC"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                      </div>
+
                     </div>
                   
                     <div class="hoja" id="hoja4">
@@ -467,9 +670,12 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <span class="metadato-tooltip">
-                                      <strong>Comparación de Pirámides Poblacionales</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Santa Cruz - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Agregue o quite series para comparar las estructuras poblacionales por sexo y rango quinquenal de edad.<br>
+                                        <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        La forma de la pirámide permite identificar el envejecimiento, crecimiento o estabilidad de la población.
                                       </span>
                                     </span>
                                   </div>

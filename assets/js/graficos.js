@@ -352,80 +352,24 @@ var options = {
   series: [
     {
       name: 'Hombres - Santa Cruz',
-      data: [0, 0.04, 0.1, 0.3, 0.67, 1.1, 1.74, 2.72, 3.6, 4.35, 5.1, 6.48, 8.01, 8.42, 8.67, 8.31, 7.24, 8.3, 9.14, 9.02, 6.69]
+      data: [0.04, 0.1, 0.3, 0.67, 1.1, 1.74, 2.72, 3.6, 4.35, 5.1, 6.48, 8.01, 8.42, 8.67, 8.31, 7.24, 8.3, 9.14, 9.02, 6.69]
     },
     {
       name: 'Mujeres - Santa Cruz',
-      data: [-0.01, -0.05, -0.21, -0.49, -0.94, -1.46, -2.03, -3.01, -3.6, -4.5, -5.27, -6.46, -7.93, -8.39, -8.85, -8.28, -6.92, -7.8, -8.75, -8.64, -6.41]
-    },
-    {
-      name: 'Hombres - Corpen Aike', hidden: true,
-      data: [0, 0.09, 0.12, 0.4, 0.57, 0.99, 1.65, 2.29, 3.57, 3.69, 3.98, 6.11, 7.8, 9.12, 8.89, 8.63, 7.94, 7.66, 8.93, 9.68, 7.9]
-    },
-    {
-      name: 'Mujeres - Corpen Aike', hidden: true,
-      data: [-0.03, -0.05, -0.33, -0.47, -0.74, -1.21, -1.58, -2.83, -3.29, -4.02, -4.63, -6.14, -7.19, -8.28, -9.62, -8.75, -7.73, -7.19, -9.41, -8.8, -7.7]
-    },
-    {
-      name: 'Hombres - Deseado', hidden: true,
-      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
-    },
-    {
-      name: 'Mujeres - Deseado', hidden: true,
-      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
-    },
-    {
-      name: 'Hombres - Güer Aike', hidden: true,
-      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
-    },
-    {
-      name: 'Mujeres - Güer Aike', hidden: true,
-      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
-    },
-    {
-      name: 'Hombres - Lago Argentino', hidden: true,
-      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
-    },
-    {
-      name: 'Mujeres - Lago Argentino', hidden: true,
-      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
-    },
-    {
-      name: 'Hombres - Lago Bs. As.', hidden: true,
-      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
-    },
-    {
-      name: 'Mujeres - Lago Bs. As.', hidden: true,
-      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
-    },
-    {
-      name: 'Hombres - Magallanes', hidden: true,
-      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
-    },
-    {
-      name: 'Mujeres - Magallanes', hidden: true,
-      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
-    },
-    {
-      name: 'Hombres - Rio Chico', hidden: true,
-      data: [0.3, 0.6, 0.7, 0.85, 1.4, 2.0, 2.8, 3.5, 3.7, 4.0, 3.8, 4.0, 3.9, 3.9, 4.2, 3.7, 3.2, 2.7]
-    },
-    {
-      name: 'Mujeres - Rio Chico', hidden: true,
-      data: [-0.7, -1.0, -1.0, -1.1, -1.3, -2.0, -2.7, -3.5, -3.8, -4.0, -4.1, -4.2, -3.9, -3.8, -3.9, -3.2, -2.9, -2.6]
+      data: [-0.06, -0.21, -0.49, -0.94, -1.46, -2.03, -3.01, -3.6, -4.5, -5.27, -6.46, -7.93, -8.39, -8.85, -8.28, -6.92, -7.8, -8.75, -8.64, -6.41]
     }
     
   ],
   chart: {
     type: 'bar',
     height: 350,
-    stacked: false
+    stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
   plotOptions: {
     bar: {
       horizontal: true,
-      barHeight: '80%',
+      barHeight: '100%',
       borderRadius: 4,
       borderRadiusApplication: 'end',
       borderRadiusWhenStacked: 'all'
@@ -449,7 +393,7 @@ var options = {
     colors: ["#fff"]
   },
   xaxis: {
-    categories: ['100+','95-99','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
       '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
     ],
     title: {
@@ -475,63 +419,618 @@ var options = {
     }
   },
   legend: {
-    position: 'right'
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Santa Cruz': 'Hombres',
+      'Mujeres - Santa Cruz': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
   }
 };
-var chart = new ApexCharts(document.querySelector("#piramide2"), options);
+var chart = new ApexCharts(document.querySelector("#piramideSC"), options);
         chart.render();
 
-// Mapeo de jurisdicciones a sus pares de series (Hombres y Mujeres)
-const jurisdicciones = {
-  'Santa Cruz': ['Hombres - Santa Cruz', 'Mujeres - Santa Cruz'],
-  'Corpen Aike': ['Hombres - Corpen Aike', 'Mujeres - Corpen Aike'],
-  'Deseado': ['Hombres - Deseado', 'Mujeres - Deseado'],
-  'Güer Aike': ['Hombres - Güer Aike', 'Mujeres - Güer Aike'],
-  'Lago Argentino': ['Hombres - Lago Argentino', 'Mujeres - Lago Argentino'],
-  'Lago Bs. As.': ['Hombres - Lago Bs. As.', 'Mujeres - Lago Bs. As.'],
-  'Magallanes': ['Hombres - Magallanes', 'Mujeres - Magallanes'],
-  'Rio Chico': ['Hombres - Rio Chico', 'Mujeres - Rio Chico']
+var options = {
+  series: [
+    {
+      name: 'Hombres - Corpen Aike',
+      data: [0.09, 0.12, 0.4, 0.57, 0.99, 1.65, 2.29, 3.57, 3.69, 3.98, 6.11, 7.8, 9.12, 8.89, 8.63, 7.94, 7.66, 8.93, 9.68, 7.9]
+    },
+    {
+      name: 'Mujeres - Corpen Aike',
+      data: [-0.08, -0.33, -0.47, -0.74, -1.21, -1.58, -2.83, -3.29, -4.02, -4.63, -6.14, -7.19, -8.28, -9.62, -8.75, -7.73, -7.19, -9.41, -8.8, -7.7]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '100%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  ],
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Corpen Aike': 'Hombres',
+      'Mujeres - Corpen Aike': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
+  }
 };
+var chart = new ApexCharts(document.querySelector("#piramideCA"), options);
+chart.render();
 
-// Lista de jurisdicciones actualmente activas
-let jurisdiccionesActivas = [];
-
-// Agregá esto luego de chart.render()
-chart.render().then(() => {
-  chart.addEventListener('legendClick', function(event, chartContext, config) {
-    const serieClickeada = chart.w.globals.seriesNames[config.seriesIndex];
-
-    // Buscar la jurisdicción correspondiente
-    let jurisdiccionSeleccionada = null;
-    for (const [nombre, pares] of Object.entries(jurisdicciones)) {
-      if (pares.includes(serieClickeada)) {
-        jurisdiccionSeleccionada = nombre;
-        break;
+var options = {
+  series: [
+    {
+      name: 'Hombres - Deseado',
+      data: [0.03, 0.09, 0.27, 0.6, 0.96, 1.54, 2.44, 3.42, 4.4, 5.13, 6.58, 8.06, 8.45, 8.49, 8.26, 7.38, 8.62, 9.33, 9.17, 6.8]
+    },
+    {
+      name: 'Mujeres - Deseado',
+      data: [-0.05, -0.2, -0.44, -0.86, -1.32, -1.79, -2.78, -3.5, -4.22, -5.23, -6.36, -8.12, -8.39, -8.69, -8.23, -7.11, -8.21, -8.96, -8.91, -6.61]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '100%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
       }
     }
-
-    if (!jurisdiccionSeleccionada) return;
-
-    const yaActiva = jurisdiccionesActivas.includes(jurisdiccionSeleccionada);
-
-    if (yaActiva) {
-      // Si ya estaba activa, la removemos (se apaga)
-      jurisdiccionesActivas = jurisdiccionesActivas.filter(j => j !== jurisdiccionSeleccionada);
-    } else {
-      // Si no estaba activa, controlamos el límite
-      if (jurisdiccionesActivas.length >= 2) {
-        mostrarAlerta("Solo se pueden comparar dos jurisdicciones a la vez.");
-        // Anulamos la acción automática de ApexCharts
-        event.preventDefault();
-        return;
+  ],
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
       }
-
-      // Activamos la nueva jurisdicción
-      jurisdiccionesActivas.push(jurisdiccionSeleccionada);
     }
-  });
-});
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Deseado': 'Hombres',
+      'Mujeres - Deseado': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#piramideDeseado"), options);
+chart.render();
 
+var options = {
+  series: [
+    {
+      name: 'Hombres - Güer Aike',
+      data: [0.04, 0.11, 0.33, 0.81, 1.33, 2.05, 3.12, 3.92, 4.49, 5.29, 6.35, 7.79, 8.1, 8.79, 8.38, 7.2, 8.23, 8.87, 8.59, 6.21]
+    },
+    {
+      name: 'Mujeres - Güer Aike',
+      data: [-0.07, -0.21, -0.54, -1.11, -1.74, -2.41, -3.44, -3.92, -5.06, -5.46, -6.53, -7.67, -8.11, -8.77, -8.3, -6.83, -7.49, -8.22, -8.18, -5.95]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '100%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  ],
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Güer Aike': 'Hombres',
+      'Mujeres - Güer Aike': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#piramideGA"), options);
+        chart.render();
+
+
+var options = {
+  series: [
+    {
+      name: 'Hombres - Lago Argentino',
+      data: [0.03, 0.09, 0.13, 0.41, 0.92, 1.45, 2.34, 3.12, 4.28, 5.04, 7.32, 9.66, 9.59, 7.83, 7.46, 6.43, 8.11, 9.41, 9.48, 6.89]
+    },
+    {
+      name: 'Mujeres - Lago Argentino',
+      data: [-0.03, -0.13, -0.33, -0.63, -1.05, -1.55, -2.54, -3.21, -3.83, -4.93, -7.32, -10, -9.9, -9.04, -7.66, -5.73, -7.9, -9.36, -8.64, -6.22]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '100%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  ],
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Lago Argentino': 'Hombres',
+      'Mujeres - Lago Argentino': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#piramideLA"), options);
+        chart.render();
+
+
+var options = {
+  series: [
+    {
+      name: 'Hombres - Lago Bs. As.',
+      data: [0.02, 0.22, 0.38, 0.72, 0.96, 1.57, 2.69, 3.51, 4.09, 4.55, 5.9, 7.63, 8.35, 10.29, 8.56, 6.67, 7.44, 9.19, 9, 8.29]
+    },
+    {
+      name: 'Mujeres - Lago Bs. As.',
+      data: [-0.02, -0.14, -0.48, -0.77, -1.12, -1.62, -2.67, -3.09, -4.08, -5.23, -5.79, -6.61, -8.99, -9.59, -8.88, -7.19, -7.03, -9.11, -9.97, -7.62]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '100%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  ],
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Lago Bs. As.': 'Hombres',
+      'Mujeres - Lago Bs. As.': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#piramideLBA"), options);
+        chart.render();
+
+
+var options = {
+  series: [
+    {
+      name: 'Hombres - Magallanes',
+      data: [0.02, 0.09, 0.31, 0.6, 0.83, 1.47, 2.59, 3.13, 3.95, 4.93, 6.22, 7.41, 8.2, 9.06, 9.26, 7.86, 7.8, 9.56, 9.73, 6.98]
+    },
+    {
+      name: 'Mujeres - Magallanes',
+      data: [-0.06, -0.36, -0.65, -1.06, -1.43, -2.22, -2.49, -3.23, -3.93, -5.16, -6.31, -7.18, -8.05, -8.92, -8.46, -7.32, -7.65, -9.45, -9.2, -6.87]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '100%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  ],
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Magallanes': 'Hombres',
+      'Mujeres - Magallanes': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#piramideMagallanes"), options);
+        chart.render();
+
+
+var options = {
+  series: [
+    {
+      name: 'Hombres - Rio Chico',
+      data: [0.1, 0.03, 0.42, 0.61, 1.13, 1.29, 2.73, 3.15, 3.6, 5.11, 6.47, 7.69, 8.91, 8.52, 8.01, 6.98, 8.23, 9.65, 10.16, 7.2]
+    },
+    {
+      name: 'Mujeres - Rio Chico',
+      data: [-0.03, -0.22, -0.59, -0.56, -1, -1.81, -2.5, -2.72, -3.85, -4.85, -5.91, -7.26, -8.1, -9.64, -8.54, -6.66, -9.29, -9.89, -9.48, -7.07]
+    }
+    
+  ],
+  chart: {
+    type: 'bar',
+    height: 350,
+    stacked: true
+  },
+  colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
+  plotOptions: {
+    bar: {
+      horizontal: true,
+      barHeight: '100%',
+      borderRadius: 4,
+      borderRadiusApplication: 'end',
+      borderRadiusWhenStacked: 'all'
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  responsive: [
+    {
+      breakpoint: 768, // para tablets y móviles
+      options: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  ],
+  stroke: {
+    width: 1,
+    colors: ["#fff"]
+  },
+  xaxis: {
+    categories: ['95+','90-94','85-89', '80-84', '75-79', '70-74', '65-69', '60-64', '55-59', '50-54',
+      '45-49', '40-44', '35-39', '30-34', '25-29', '20-24', '15-19', '10-14', '5-9', '0-4'
+    ],
+    title: {
+      text: 'Porcentaje'
+    },
+    labels: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  tooltip: {
+    shared: false,
+    x: {
+      formatter: function (val) {
+        return val;
+      }
+    },
+    y: {
+      formatter: function (val) {
+        return Math.abs(val) + "%";
+      }
+    }
+  },
+  legend: {
+    position: 'bottom',
+    formatter: function(seriesName) {
+    // Mapeo manual para mostrar nombres más amigables
+    const nombresPersonalizados = {
+      'Hombres - Rio Chico': 'Hombres',
+      'Mujeres - Rio Chico': 'Mujeres'
+    };
+    return nombresPersonalizados[seriesName] || seriesName;
+  }
+  }
+};
+var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
+        chart.render();
 
 /*EDAD MEDIANA*/
 var options = {
@@ -614,6 +1113,7 @@ var options = {
 
         var chart = new ApexCharts(document.querySelector("#edad_mediana"), options);
         chart.render();
+    
 /*DEMOGRAFIA*/
 
 /*TRABAJO E INGRESOS*/
