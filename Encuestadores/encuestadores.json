@@ -1,5 +1,13 @@
 [
     {
+        "dni": "12345678",
+        "operativo": "2",
+        "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
+        "nombre": "Julieta Santa Cruz",
+        "rol": "Encuestadora",
+        "foto": "mujer_sin_fondo.jpg"
+    },
+    {
         "dni": "35570501",
         "operativo": "1",
         "operativo_nombre": "Índice de Precios al Consumidor (IPC)",
