@@ -16,7 +16,7 @@
     }
   ],
   chart: {
-    height: 350,
+    height: '100%',
     type: 'bar'
   },
   plotOptions: {
@@ -74,12 +74,12 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350 // ✅ mismo tamaño que el gráfico anterior
+    height: '100%'
   },
   plotOptions: {
     bar: {
       horizontal: true,
-      barHeight: '70%' // ✅ mismo ancho relativo
+      barHeight: '70%'
     }
   },
   dataLabels: {
@@ -108,10 +108,10 @@ var options = {
       }
     },
     title: {
-      text: undefined // ❌ sin título de eje
+      text: undefined
     }
   },
-  colors: ['#00E396'], // ✅ mismo color que el gráfico anterior
+  colors: ['#00E396'],
   legend: {
     show: false
   }
@@ -164,7 +164,7 @@ var options = {
           data: [22, 16, 23, 18, 24]
         }],
           chart: {
-          height: 350,
+          height: '100%',
           type: 'line',
           stacked: false,
         },
@@ -194,7 +194,7 @@ var options = {
           size: 0
         },
         chart: {
-          height: 350,
+          height: '100%',
           type: 'line',
           stacked: false,
           toolbar: {
@@ -247,7 +247,7 @@ var options = {
     { name: 'Rio Chico', hidden: true, type: 'line', data: [22, 16, 23, 18, 24] }
   ],
   chart: {
-    height: 350,
+    height: '100%',
     type: 'line',
     stacked: false
   },
@@ -282,7 +282,7 @@ var options = {
     size: 0
   },
   chart: {
-  height: 350,
+  height: '100%',
   type: 'line',
   stacked: false,
   toolbar: {
@@ -370,7 +370,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -455,7 +455,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -540,7 +540,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -625,7 +625,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -711,7 +711,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -797,7 +797,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -883,7 +883,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -969,7 +969,7 @@ var options = {
   ],
   chart: {
     type: 'bar',
-    height: 350,
+    height: '100%',
     stacked: true
   },
   colors: ['#007bff', '#ff4d6d', '#5bc0de', '#ff9f9f'],
@@ -1057,7 +1057,7 @@ var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
       }
     ],
     chart: {
-      height: 350,
+      height: '100%',
       type: 'bar',
       stacked: false
     },
@@ -1134,7 +1134,7 @@ var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
     chart: {
       type: 'bar',
       stacked: true,
-      height: 350
+      height: '100%'
     },
     series: [
       {
@@ -1191,7 +1191,7 @@ var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
     chart: {
       type: 'bar',
       stacked: true,
-      height: 350
+      height: '100%'
     },
     series: [
       {
@@ -1250,7 +1250,7 @@ var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
     chart: {
       type: 'bar',
       stacked: true,
-      height: 350
+      height: '100%'
     },
     series: [
       {
@@ -1308,7 +1308,7 @@ var options = {
     chart: {
       type: 'bar',
       stacked: true,
-      height: 350
+      height: '100%'
     },
     series: [
       {
@@ -1375,7 +1375,7 @@ var options = {
     chart: {
       type: 'bar',
       stacked: true,
-      height: 350
+      height: '100%'
     },
     series: [
       {
@@ -1433,7 +1433,7 @@ var options = {
     chart: {
       type: 'bar',
       stacked: true,
-      height: 350
+      height: '100%'
     },
     series: [
       {
@@ -1492,7 +1492,7 @@ var options = {
 var options = {
     chart: {
       type: 'bar',
-      height: 350
+      height: '100%'
     },
     series: [{
       name: "Porcentaje de viviendas colectivas",
@@ -1555,7 +1555,7 @@ var options = {
     chart: {
       type: 'bar',
       stacked: true,
-      height: 350
+      height: '100%'
     },
     series: [
       {
@@ -1663,7 +1663,7 @@ var options = {
       data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
   }],
     chart: {
-    height: 350,
+    height: 400,
     type: 'line',
     zoom: {
       enabled: true
