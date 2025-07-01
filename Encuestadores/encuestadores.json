@@ -133,7 +133,7 @@
         "operativo": "2",
         "operativo_nombre": "Encuesta Permanente de Hogares (EPH)",
         "nombre": "Rivas Tamara",
-        "rol": "Supervisora",
+        "rol": "Coordinadora",
         "foto": "Rivas-Tamara.jpg"
     },
     {
@@ -151,6 +151,14 @@
         "nombre": "Karen Salcedo",
         "rol": "Encuestadora",
         "foto": "Karen_Salcedo.jpg"
+    },
+    {
+        "dni": "35567433",
+        "operativo": "4",
+        "operativo_nombre": "Encuesta de Ocupación Hotelera (EOH)",
+        "nombre": "Luciana Muñoz",
+        "rol": "Supervisora",
+        "foto": "Luciana_Munoz.jpeg"
     },
     {
         "dni": "33533033",

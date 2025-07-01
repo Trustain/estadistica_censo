@@ -70,9 +70,12 @@
             </div>
             <div class="barra-libros mt-0 mb-0">
               <div class="nav-libros-horizontal d-flex gap-2">
-                <button class="pestana-libro activo" data-libro="libro1">DEMOGRAFIA</button>
+                <button class="pestana-libro activo" data-libro="libro1">DEMOGRAFÍA</button>
                 <button class="pestana-libro" data-libro="libro2">SALUD</button>
-                <button class="pestana-libro" data-libro="libro3">PREVISION SOCIAL</button>
+                <button class="pestana-libro" data-libro="libro3">PREVISIÓN SOCIAL</button>
+                <button class="pestana-libro" data-libro="libro4">VIVIENDA</button>
+                <button class="pestana-libro" data-libro="libro5">HOGARES</button>
+                <button class="pestana-libro" data-libro="libro6">POBLACIÓN</button>
               </div>
             </div>
           </div>
@@ -120,10 +123,18 @@
                         <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
                           <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
                           <i class="fa fa-info-circle me-1"></i>
-                          Presioná en el nombre de una serie de la leyenda para agregarla o quitarla del gráfico; o bien realizá 
-                          zoom sobre un departamento en particular.
+                          Presioná en el nombre de una serie de la leyenda para agregarla o quitarla del gráfico.
                         </div>
                       </div>
+                    </div>
+
+                    <div class="fuente texto-final">
+                      <span style="text-decoration: underline;">Fuente</span>: Censo Nacional de Población, Hogares y Viviendas 2022.
+                    </div>
+                    <div class="glosario-enlace texto-final">
+                      <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" target="_blank" style="text-decoration: none; color: #0077cc;">
+                        📘 Consultá el glosario de conceptos del censo (PDF)
+                      </a>
                     </div>
                     
                   </div>
@@ -219,7 +230,7 @@
                                       <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
                                         <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
-                                        personas de edad activa (15-64).<br>
+                                        personas de edad teóricamente activa (15-64).<br>
                                         <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
                                         económico y social de la población activa.<br> 
                                       </span>
@@ -407,7 +418,7 @@
 
                       </div>
 
-                      <!-- FILA 4 -- MAGALLANES-->
+                      <!-- FILA 4 -- MAGALLANES Y RIO CHICO-->
                       <div class="row">
                           <!-- Columna 1-->
                           <div class="col-lg-6 mb-4">
@@ -480,7 +491,7 @@
                                       <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
                                         <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
-                                        numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                        numéricamente iguales. Es decir, la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
                                         encima de dicho valor.
                                       </span>
                                     </span>
@@ -502,6 +513,7 @@
             </div>
           </div>
 
+          <!-- BLOQUE SALUD -->
           <div class="libro-contenedor d-none" id="libro2">
             <div class="libro container-fluid">
               <div class="row h-100">
@@ -509,15 +521,18 @@
                 <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
                   <div class="panel-hojas">
                     <div class="item-hoja activa" data-hoja="hoja1">
-                      <div class="titulo">Población</div>
+                      <div class="titulo">Cobertura de salud</div>
                       <div class="descripcion">
-                        <!-- <ul  style="padding-left: 20px;">
-                          <li>Total poblacional por departamento.</li>
-                          <li>Variación poblacional absoluta y relativa intercensal.</li>
-                        </ul> -->
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en una categoría de la leyenda para sumarla o quitarla del gráfico.
+                        </div>
+                      </div>
+                      <div class="descripcion">
                       </div>
                     </div>
-                    <div class="item-hoja" data-hoja="hoja2">
+                    <!-- <div class="item-hoja" data-hoja="hoja2">
                       <div class="titulo">Indices Estructurales</div>
                       <div class="descripcion">
                         <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
@@ -548,6 +563,15 @@
                           zoom sobre un departamento en particular
                         </div>
                       </div>
+                    </div> -->
+
+                    <div class="fuente texto-final">
+                      <span style="text-decoration: underline;">Fuente</span>: Censo Nacional de Población, Hogares y Viviendas 2022.
+                    </div>
+                    <div class="glosario-enlace texto-final">
+                      <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" target="_blank" style="text-decoration: none; color: #0077cc;">
+                        📘 Consultá el glosario de conceptos del censo (PDF)
+                      </a>
                     </div>
                     
                   </div>
@@ -567,15 +591,15 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Población absoluta censal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Tenencia de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Indica la cantidad de personas en el censo nacional 2010 y el 2022.
+                                        Refleja cómo se distribuye la población según el tipo de cobertura de salud declarada.
                                       </span>
                                     </span>
                                   </div>
                                   <!-- Grafico -->
                                   <div class="card-body">
-                                      <div id="poblacion"></div>
+                                      <div id="salud"></div>
                                   </div>
 
                               </div>
@@ -589,16 +613,16 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Variación poblacional intercensal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Tipo de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Expresa el cambio poblacional relativo (porcentaje) y absoluto (cantidad de personas) entre el censo
-                                        nacional 2010 y el 2022.
+                                        Considerando exclusivamente a la población con cobertura de salud, se analiza el porcentaje que cuenta con obra social/prepaga 
+                                        y programas o planes estatales.
                                       </span>
                                     </span>
                                   </div>
                                   <!-- Grafico -->
                                   <div class="card-body">
-                                      <div id="variacion"></div>
+                                      <div id="tipoCobertura"></div>
                                   </div>
 
                               </div>
@@ -726,6 +750,7 @@
             </div>
           </div>
 
+          <!-- BLOQUE PREVISION SOCIAL -->
           <div class="libro-contenedor d-none" id="libro3">
             <div class="libro container-fluid">
               <div class="row h-100">
@@ -733,15 +758,16 @@
                 <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
                   <div class="panel-hojas">
                     <div class="item-hoja activa" data-hoja="hoja1">
-                      <div class="titulo">Población</div>
+                      <div class="titulo">Previsión social</div>
                       <div class="descripcion">
-                        <!-- <ul  style="padding-left: 20px;">
-                          <li>Total poblacional por departamento.</li>
-                          <li>Variación poblacional absoluta y relativa intercensal.</li>
-                        </ul> -->
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en una categoría de la leyenda para sumarla o quitarla del gráfico.
+                        </div>
                       </div>
                     </div>
-                    <div class="item-hoja" data-hoja="hoja2">
+                    <!-- <div class="item-hoja" data-hoja="hoja2">
                       <div class="titulo">Indices Estructurales</div>
                       <div class="descripcion">
                         <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
@@ -772,6 +798,15 @@
                           zoom sobre un departamento en particular
                         </div>
                       </div>
+                    </div> -->
+
+                    <div class="fuente texto-final">
+                      <span style="text-decoration: underline;">Fuente</span>: Censo Nacional de Población, Hogares y Viviendas 2022.
+                    </div>
+                    <div class="glosario-enlace texto-final">
+                      <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" target="_blank" style="text-decoration: none; color: #0077cc;">
+                        📘 Consultá el glosario de conceptos del censo (PDF)
+                      </a>
                     </div>
                     
                   </div>
@@ -791,15 +826,15 @@
                                   <!-- Encabezado -->
                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Población absoluta censal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Tenencia de previsión social</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Indica la cantidad de personas en el censo nacional 2010 y el 2022.
+                                        Indica el porcentaje de personas que declararon percibir o no una jubilación.
                                       </span>
                                     </span>
                                   </div>
                                   <!-- Grafico -->
                                   <div class="card-body">
-                                      <div id="poblacion"></div>
+                                      <div id="percepcion_Prevision"></div>
                                   </div>
 
                               </div>
@@ -813,16 +848,16 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Variación poblacional intercensal</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Tipo de Jubilación o Pensión percibida</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Expresa el cambio poblacional relativo (porcentaje) y absoluto (cantidad de personas) entre el censo
-                                        nacional 2010 y el 2022.
+                                        Considerando exclusivamente a las población que percibe jubilación o pensión, se desagrega el tipo de 
+                                        beneficio previsional por departamento.
                                       </span>
                                     </span>
                                   </div>
                                   <!-- Grafico -->
                                   <div class="card-body">
-                                      <div id="variacion"></div>
+                                      <div id="TipoBeneficio"></div>
                                   </div>
 
                               </div>
@@ -947,6 +982,718 @@
             </div>
           </div>
 
+          <!-- BLOQUE VIVIENDA -->
+          <div class="libro-contenedor d-none" id="libro4">
+            <div class="libro container-fluid">
+              <div class="row h-100">
+                <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
+                <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
+                  <div class="panel-hojas">
+                    <div class="item-hoja activa" data-hoja="hoja1">
+                      <div class="titulo">Viviendas</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en una categoría de la leyenda para sumarla o quitarla del gráfico.
+                        </div>
+                      </div>
+                      <div class="descripcion">
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja2">
+                      <div class="titulo">Viviendas Particulares</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="item-hoja" data-hoja="hoja3">
+                      <div class="titulo">Pirámides de población</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item-hoja" data-hoja="hoja4">
+                      <div class="titulo">Edad Mediana</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
+                          zoom sobre un departamento en particular
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <div class="fuente texto-final">
+                      <span style="text-decoration: underline;">Fuente</span>: Censo Nacional de Población, Hogares y Viviendas 2022.
+                    </div>
+                    <div class="glosario-enlace texto-final">
+                      <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" target="_blank" style="text-decoration: none; color: #0077cc;">
+                        📘 Consultá el glosario de conceptos del censo (PDF)
+                      </a>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <!-- Contenido de hojas -->
+                <div class="col-12 col-lg-9 order-2 order-lg-1">
+                  <div class="hojas">
+                    <div class="hoja activa" id="hoja1">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Viviendas según tipo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Viviendas particulares:</strong> viviendas destinadas al alojamiento de uno o más hogares en
+                                        donde las personas viven bajo un régimen de tipo familiar (sean o no parientes).<br>
+                                        <strong>Viviendas colectiva:</strong> viviendas de alojamiento construidas o adaptadas para albergar
+                                        personas de un modo permanente o temporario, sujetas a reglamentos de convivencia
+                                        y comportamiento que se plasman en normativas específicas y reconocidas por la
+                                        sociedad en general.<br></br>
+                                        Para más información vese Pág. 5 del <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" 
+                                        target="_blank" title="Glosario de Conceptos Censales"> Glosario de conceptos censales.</a>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="TipoVivienda"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Proporción de viviendas que son colectivas</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Viviendas colectiva:</strong> viviendas de alojamiento construidas o adaptadas para albergar
+                                        personas de un modo permanente o temporario, sujetas a reglamentos de convivencia
+                                        y comportamiento que se plasman en normativas específicas y reconocidas por la
+                                        sociedad en general.<br></br>
+                                        Para más información vese Pág. 5 del <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" 
+                                        target="_blank" title="Glosario de Conceptos Censales"> Glosario de conceptos censales.</a>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="ViviendasColectivas"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja2">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Viviendas particulares según ocupación</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Muestra la proporción de viviendas que están habitadas o deshabitadas al momento del censo.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="Vivienda_ocupacion"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Viviendas no habitadas por tipo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
+                                        personas de edad teóricamente activa (15-64).<br>
+                                        <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
+                                        económico y social de la población activa.<br> 
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                    <div id="ViviendasNoHabitadas"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja3">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Santa Cruz - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        La forma de la pirámide permite identificar el envejecimiento, crecimiento o estabilidad de la población.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramide2"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="hoja" id="hoja4">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
+                                        numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                        encima de dicho valor.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="edad_mediana"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE HOGARES -->
+          <div class="libro-contenedor d-none" id="libro5">
+            <div class="libro container-fluid">
+              <div class="row h-100">
+                <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
+                <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
+                  <div class="panel-hojas">
+                    <div class="item-hoja activa" data-hoja="hoja1">
+                      <div class="titulo">Cobertura de salud</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en una categoría de la leyenda para sumarla o quitarla del gráfico.
+                        </div>
+                      </div>
+                      <div class="descripcion">
+                      </div>
+                    </div>
+                    <!-- <div class="item-hoja" data-hoja="hoja2">
+                      <div class="titulo">Indices Estructurales</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja3">
+                      <div class="titulo">Pirámides de población</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item-hoja" data-hoja="hoja4">
+                      <div class="titulo">Edad Mediana</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
+                          zoom sobre un departamento en particular
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <div class="fuente texto-final">
+                      <span style="text-decoration: underline;">Fuente</span>: Censo Nacional de Población, Hogares y Viviendas 2022.
+                    </div>
+                    <div class="glosario-enlace texto-final">
+                      <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" target="_blank" style="text-decoration: none; color: #0077cc;">
+                        📘 Consultá el glosario de conceptos del censo (PDF)
+                      </a>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <!-- Contenido de hojas -->
+                <div class="col-12 col-lg-9 order-2 order-lg-1">
+                  <div class="hojas">
+                    <div class="hoja activa" id="hoja1">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Tenencia de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Refleja cómo se distribuye la población según el tipo de cobertura de salud declarada.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="salud"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Tipo de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Considerando exclusivamente a la población con cobertura de salud, se analiza el porcentaje que cuenta con obra social/prepaga 
+                                        y programas o planes estatales.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="tipoCobertura"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja2">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
+                                        <strong>Interpretación:</strong> Un valor más alto indica una población más envejecida.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="indiceenvejecimiento"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
+                                        personas de edad activa (15-64).<br>
+                                        <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
+                                        económico y social de la población activa.<br> 
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                    <div id="indicedependenciapotencial"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja3">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Santa Cruz - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        La forma de la pirámide permite identificar el envejecimiento, crecimiento o estabilidad de la población.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramide2"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="hoja" id="hoja4">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
+                                        numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                        encima de dicho valor.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="edad_mediana"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE PERSONAS -->
+          <div class="libro-contenedor d-none" id="libro6">
+            <div class="libro container-fluid">
+              <div class="row h-100">
+                <!-- Panel derecho de hojas: en pantallas chicas aparece arriba -->
+                <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
+                  <div class="panel-hojas">
+                    <div class="item-hoja activa" data-hoja="hoja1">
+                      <div class="titulo">Cobertura de salud</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en una categoría de la leyenda para sumarla o quitarla del gráfico.
+                        </div>
+                      </div>
+                      <div class="descripcion">
+                      </div>
+                    </div>
+                    <!-- <div class="item-hoja" data-hoja="hoja2">
+                      <div class="titulo">Indices Estructurales</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-hoja" data-hoja="hoja3">
+                      <div class="titulo">Pirámides de población</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de un departamento y sexo de la leyenda para sumarla o quitarla de la pirámide.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item-hoja" data-hoja="hoja4">
+                      <div class="titulo">Edad Mediana</div>
+                      <div class="descripcion">
+                        <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
+                          <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
+                          <i class="fa fa-info-circle me-1"></i>
+                          Presiona en el nombre de una serie de la leyenda para sumarla o quitarla del gráfico; o bien realice 
+                          zoom sobre un departamento en particular
+                        </div>
+                      </div>
+                    </div> -->
+                    
+                  </div>
+                </div>
+
+                <!-- Contenido de hojas -->
+                <div class="col-12 col-lg-9 order-2 order-lg-1">
+                  <div class="hojas">
+                    <div class="hoja activa" id="hoja1">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Tenencia de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Refleja cómo se distribuye la población según el tipo de cobertura de salud declarada.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="salud"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Tipo de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Considerando exclusivamente a la población con cobertura de salud, se analiza el porcentaje que cuenta con obra social/prepaga 
+                                        y programas o planes estatales.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="tipoCobertura"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja2">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-6 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Índice de Envejecimiento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de 65 años y más por cada 100 personas de 0 a 14 años de edad.<br>
+                                        <strong>Interpretación:</strong> Un valor más alto indica una población más envejecida.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="indiceenvejecimiento"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+
+                          <!-- Columna 2-->
+                          <div class="col-lg-6 mb-4">
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Indice de dependencia potencial</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
+                                        personas de edad activa (15-64).<br>
+                                        <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
+                                        económico y social de la población activa.<br> 
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                    <div id="indicedependenciapotencial"></div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="hoja" id="hoja3">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Santa Cruz - Pirámide Poblacional</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Concepto:</strong> La pirámide poblacional muestra la distribución de la población por edad y sexo.  
+                                        <br><br>
+                                        <strong>Interpretación:</strong> Cada barra representa el porcentaje de personas de un sexo en un grupo de edad determinado.  
+                                        La forma de la pirámide permite identificar el envejecimiento, crecimiento o estabilidad de la población.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="piramide2"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="hoja" id="hoja4">
+                      <!-- FILA 1-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12 mb-4">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow mb-4">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <span class="metadato-tooltip">
+                                      <strong>Edad mediana total y por sexo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        <strong>Interpretación:</strong>Edad central que divide a la población ordenada por edad de menor a mayor en dos grupos 
+                                        numéricamente iguales, es decir la mitad de la población se ubica por debajo del valor de la mediana y la otra mitad por 
+                                        encima de dicho valor.
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="edad_mediana"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       
@@ -1018,7 +1765,7 @@
                     del Censo Nacional de Población, Hogares y Viviendas 2022">base de datos Redatam </a> de viviendas particulares del Censo Nacional de Población, 
                     Hogares y Viviendas 2022 hasta el nivel de fracción y radio censal.</p>
             <div class="main-button mt-3">
-              <a href="https://censo.gob.ar/index.php/datos_definitivos/" target="_blank">Conocé más</a>
+              <a href="publicaciones.html" target="_blank">Conocé más</a>
             </div>
           </div>
         </div>
@@ -1150,9 +1897,11 @@
             <div class="col-lg-12">
                 <form id="validacion-encuestador" onsubmit="validarEncuestador(event)">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 mb-4">
                             <h4>Verificá la <em>identidad</em> de tu <em>Encuestador/a</em></h4>
-                            <p>Si recibe la visita de un encuestador en nombre de la DPEyC Santa Cruz puede verificar la identidad del mismo completando los siguientes campos. </p>
+                            <p>Si recibe la visita de un encuestador en nombre de la DPEyC Santa Cruz puede verificar la identidad del 
+                              mismo y corroborar que se trata de un persona acreditada. Para ello, utilice la credencial con la 
+                              cual se presentó y complete los siguientes campos. </p>
                         </div>
                         <div class="col-lg-6">
                             <fieldset>
@@ -1298,6 +2047,17 @@
     $(".option").click(function(){
       $(".option").removeClass("active");
       $(this).addClass("active"); 
+    });
+  </script>
+  <!--SCRIPT PARA LIBROS DEL BLOQUE DE INDICADORES-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      inicializarLibro(
+        '.pestana-libro',         // selector de botones de pestañas
+        '.libro-contenedor',      // contenedor de cada "libro"
+        '.item-hoja',             // botones de cambio de hoja interna
+        '.hoja'                   // hojas internas
+      );
     });
   </script>
 

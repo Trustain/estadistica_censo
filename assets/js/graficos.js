@@ -83,7 +83,15 @@ var options = {
     }
   },
   dataLabels: {
-    enabled: false // ❌ no mostrar etiquetas sobre las barras
+    enabled: true,
+    formatter: function (val, { seriesIndex, dataPointIndex, w }) {
+      const abs = w.config.series[seriesIndex].data[dataPointIndex].abs;
+      return abs.toLocaleString('es-AR') + ' pers.';
+    },
+    style: {
+      fontSize: '12px',
+      colors: ['#fff']
+    }
   },
   tooltip: {
     y: {
@@ -1033,89 +1041,591 @@ var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
         chart.render();
 
 /*EDAD MEDIANA*/
-var options = {
-          series: [{
-          name: 'Total de población',
-          type: 'column',
-          data: [31, 29, 30, 32, 31, 30, 29, 29]
-        }, {
-          name: 'Mujer/Femenino',
-          type: 'column',
-          data: [31, 30, 31, 32, 32, 30, 30, 29]
-        }, {
-          name: 'Varón/Masculino',
-          type: 'column',
-          data: [30, 29, 30, 31, 31, 30, 29, 29]
-        }],
-          chart: {
-          height: 350,
-          type: 'line',
-          stacked: false,
-        },
-        stroke: {
-          width: [0, 2, 5],
-          curve: 'smooth'
-        },
-        plotOptions: {
-          bar: {
-            columnWidth: '70%'
-          }
-        },
-        
-        fill: {
-          opacity: [1, 1, 1],
-          gradient: {
-            inverseColors: false,
-            shade: 'light',
-            type: "vertical",
-            opacityFrom: 0.85,
-            opacityTo: 0.55,
-            stops: [0, 100, 100, 100]
-          }
-        },
-        labels: ['Santa Cruz', 'Corpen Aike', 'Deseado', 'Güer Aike', 'Lago Argentino', 'Lago Bs. As.', 'Magallnes', 'Rio Chico'],
-        markers: {
-          size: 0
-        },
-        xaxis: {
-          type: 'category'
-        },
-        yaxis: {
-           labels: {
-            style: {
-              fontSize: '12px'
-            }
-          },
-          axisTicks: {
-            show: false
-          },
-          axisBorder: {
-            show: false
-          },
-          title: {
-            text: 'Edad',
-          }
-        },
-        tooltip: {
-          shared: true,
-          intersect: false,
-          y: {
-            formatter: function (y) {
-              if (typeof y !== "undefined") {
-                return y.toFixed(0) + " points";
-              }
-              return y;
-        
-            }
-          }
+  var options = {
+    series: [
+      {
+        name: 'Total de población',
+        data: [31, 29, 30, 32, 31, 30, 29, 29]
+      },
+      {
+        name: 'Mujer/Femenino', hidden: true,
+        data: [31, 30, 31, 32, 32, 30, 30, 29]
+      },
+      {
+        name: 'Varón/Masculino', hidden: true,
+        data: [30, 29, 30, 31, 31, 30, 29, 29]
+      }
+    ],
+    chart: {
+      height: 350,
+      type: 'bar',
+      stacked: false
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '70%'
+      }
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toFixed(0);
+      }
+    },
+    fill: {
+      opacity: 1
+    },
+    labels: [
+      'Santa Cruz', 'Corpen Aike', 'Deseado', 'Güer Aike',
+      'Lago Argentino', 'Lago Bs. As.', 'Magallanes', 'Río Chico'
+    ],
+    markers: {
+      size: 0
+    },
+    xaxis: {
+      type: 'category',
+      labels: {
+        style: {
+          fontSize: '12px'
         }
-        };
+      }
+    },
+    yaxis: {
+      labels: {
+        style: {
+          fontSize: '12px'
+        }
+      },
+      axisTicks: {
+        show: false
+      },
+      axisBorder: {
+        show: false
+      },
+      title: {
+        text: 'Edad'
+      }
+    },
+    tooltip: {
+      shared: true,
+      intersect: false,
+      y: {
+        formatter: function (y) {
+          if (typeof y !== "undefined") {
+            return y.toFixed(0) + " años";
+          }
+          return y;
+        }
+      }
+    },
+    colors: ['#008FFB','#4CAF50', '#FEB019'] // opcionalmente coherente con los otros gráficos
+  };
 
-        var chart = new ApexCharts(document.querySelector("#edad_mediana"), options);
-        chart.render();
+  var chart = new ApexCharts(document.querySelector("#edad_mediana"), options);
+  chart.render();
     
 /*DEMOGRAFIA*/
 
+/*=============================   SALUD    ==========================================================================================*/
+  var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: 350
+    },
+    series: [
+      {
+        name: "Tiene obra social o prepaga (incluye PAMI)",
+        data: [74.1, 78.4, 70.8, 76.7, 68.9, 78.7, 77.9, 79.9]
+      },
+      {
+        name: "Tiene programas o planes estatales de salud",
+        data: [8.9, 7.3, 9.7, 8.1, 13.3, 6.8, 7.3, 4.2]
+      },
+      {
+        name: "No tiene obra social, prepaga ni plan estatal",
+        data: [17.0, 14.3, 19.5, 15.2, 17.8, 14.5, 14.8, 15.9]
+      }
+    ],
+    xaxis: {
+      max: 100,
+      labels: {
+        formatter: function (val) {
+          return parseInt(val) + "%";
+        }
+      },
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    tooltip: {
+      x: {
+        show: true
+      },
+      y: {
+        formatter: function (val) {
+          return val + "%";
+        }
+      }
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    colors: ['#4CAF50', '#008FFB', '#FEB019'], // colores armónicos con #e6b800
+    legend: {
+      position: 'bottom'
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#salud"), options);
+  chart.render();
+
+
+  var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: 350
+    },
+    series: [
+      {
+        name: "Obra social o prepaga (incluye PAMI)",
+        data: [89.3, 91.5, 88.0, 90.5, 83.8, 92.1, 91.4, 95.0]
+      },
+      {
+        name: "Programas o planes estatales de salud",
+        data: [10.7, 8.5, 12.0, 9.5, 16.2, 7.9, 8.6, 5.0]
+      }
+    ],
+    xaxis: {
+      max: 100,
+      labels: {
+        formatter: function (val) {
+          return parseInt(val) + "%";
+        }
+      },
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toFixed(1) + "%";
+        }
+      }
+    },
+    colors: ['#4CAF50', '#008FFB'], // Verde y amarillo armónicos
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toFixed(1);
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#tipoCobertura"), options);
+  chart.render();
+/*=============================   PREVISION SOCIAL  =================================================================================*/
+
+  var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: 350
+    },
+    series: [
+      {
+        name: "Sí percibe jubilación o pensión",
+        data: [14.1, 12.6, 12.9, 15.9, 11.8, 13.2, 12.8, 13.8]
+      },
+      {
+        name: "No percibe jubilación o pensión",
+        data: [85.9, 87.4, 87.1, 84.1, 88.2, 86.8, 87.2, 86.2]
+      }
+    ],
+    xaxis: {
+      max: 100,
+      labels: {
+        formatter: function (val) {
+          return parseInt(val) + "%";
+        }
+      },
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toFixed(1) + "%";
+        }
+      }
+    },
+    colors: ['#775DD0', '#00E396'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toFixed(1);
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#percepcion_Prevision"), options);
+  chart.render();
+
+var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: 350
+    },
+    series: [
+      {
+        name: "Solo jubilación",
+        data: [59.7, 62.3, 57.5, 62.1, 57.2, 59.5, 55.5, 53.2]
+      },
+      {
+        name: "Solo pensión por fallecimiento",
+        data: [10.6, 11.8, 11.8, 9.9, 8.0, 11.6, 8.5, 15.2]
+      },
+      {
+        name: "Jubilación y pensión por fallecimiento",
+        data: [9.2, 9.2, 9.4, 9.0, 8.1, 8.2, 12.5, 11.0]
+      },
+      {
+        name: "Solo pensión de otro tipo",
+        data: [20.4, 16.8, 21.4, 18.9, 26.7, 20.6, 23.5, 20.6]
+      }
+    ],
+    xaxis: {
+      max: 100,
+      labels: {
+        formatter: function (val) {
+          return parseInt(val) + "%";
+        }
+      },
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toFixed(1) + "%";
+        }
+      }
+    },
+    colors: ['#4CAF50', '#FEB019', '#775DD0', '#008FFB'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toFixed(1);
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#TipoBeneficio"), options);
+  chart.render();
+
+  /* ========================== VIVIENDAS ==================================*/
+  var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: 350
+    },
+    series: [
+      {
+        name: "Hay personas presentes",
+        data: [87.5, 88.6, 88.4, 87.8, 85.5, 85.2, 84.7, 83.9]
+      },
+      {
+        name: "No hay personas presentes",
+        data: [12.5, 11.4, 11.6, 12.2, 14.5, 14.8, 15.3, 16.1]
+      }
+    ],
+    xaxis: {
+      max: 100,
+      labels: {
+        formatter: function (val) {
+          return parseInt(val) + "%"; // sin decimales ni símbolo
+        }
+      },
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toFixed(1) + "%";
+        }
+      }
+    },
+    colors: ['#D9831F', '#BF6B30'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toFixed(1).replace(".0", ""); // sin símbolo de %
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#Vivienda_ocupacion"), options);
+  chart.render();
+
+var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: 350
+    },
+    series: [
+      {
+        name: "Viviendas particulares",
+        data: [134840, 6197, 49464, 54818, 11008, 5349, 5376, 2628]
+      },
+      {
+        name: "Viviendas colectivas",
+        data: [170, 11, 27, 43, 65, 6, 9, 9]
+      }
+    ],
+    xaxis: {
+      title: {
+        text: 'Cantidad de viviendas'
+      },
+      labels: {
+        formatter: function (val) {
+          return parseInt(val).toLocaleString('es-AR');
+        }
+      },
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toLocaleString('es-AR') + " viviendas";
+        }
+      }
+    },
+    colors: ['#D9831F', '#BF6B30'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toLocaleString('es-AR');
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#TipoVivienda"), options);
+  chart.render();
+
+var options = {
+    chart: {
+      type: 'bar',
+      height: 350
+    },
+    series: [{
+      name: "Porcentaje de viviendas colectivas",
+      data: [0.13, 0.18, 0.05, 0.08, 0.59, 0.11, 0.17, 0.34]
+    }],
+    xaxis: {
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        formatter: function (val) {
+          return val.toFixed(1).replace(".0", "") + "%";
+        }
+      },
+      max: 0.6, // para ajustar visualmente (1% como máximo)
+    },
+    yaxis: {
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        barHeight: '60%'
+      }
+    },
+    tooltip: {
+      x: {
+        show: true
+      },
+      y: {
+        formatter: function (val) {
+          return val.toFixed(2) + "%";
+        }
+      }
+    },
+    colors: ['#C26A34'],
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toFixed(2).replace('.', ','); // estilo local, sin %
+      }
+    },
+    legend: {
+      show: false
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#ViviendasColectivas"), options);
+  chart.render();
+
+
+  var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: 350
+    },
+    series: [
+      {
+        name: "Uso temporal (vacaciones, fin de semana, segunda residencia)",
+        data: [4.0, 1.4, 3.4, 3.7, 7.5, 7.9, 1.7, 3.8]
+      },
+      {
+        name: "Uso como oficina, consultorio o comercio", hidden: true,
+        data: [19.1, 13.0, 26.1, 17.0, 10.5, 12.7, 23.6, 4.5]
+      },
+      {
+        name: "En alquiler o venta", hidden: true,
+        data: [13.1, 18.1, 11.2, 13.7, 16.9, 12.1, 8.8, 15.4]
+      },
+      {
+        name: "En construcción", hidden: true,
+        data: [32.3, 38.0, 30.0, 37.0, 22.7, 20.9, 41.9, 17.0]
+      },
+      {
+        name: "Personas ausentes temporalmente", hidden: true,
+        data: [13.8, 11.9, 14.9, 11.6, 18.2, 18.2, 14.5, 11.1]
+      }
+    ],
+    xaxis: {
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        formatter: function (val) {
+          return parseInt(val) + "%";
+        }
+      }
+    },
+    yaxis: {
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toFixed(1) + "%";
+        }
+      }
+    },
+    colors: ['#00E396', '#008FFB', '#FEB019', '#FF4560', '#775DD0'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val.toFixed(1).replace('.0', '');
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#ViviendasNoHabitadas"), options);
+  chart.render();
+  
 /*TRABAJO E INGRESOS*/
 
 /* var popCanvas = $("#popChart");

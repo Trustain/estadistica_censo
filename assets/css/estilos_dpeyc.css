@@ -1331,6 +1331,18 @@ Inicio
   overflow-y: auto;
 }
 
+.texto-final {
+  font-family: inherit;      /* usa misma fuente que el panel */
+  font-size: 0.9rem;         /* levemente más chico si lo preferís sutil */
+  padding: 1rem 1.5rem;
+  color: #333;
+  text-align: left;
+}
+
+.glosario-enlace {
+  margin-top: -0.5rem;
+}
+
 .item-hoja {
   cursor: pointer;
   border-bottom: 1px solid #ddd;
@@ -1344,28 +1356,6 @@ Inicio
 .item-hoja:hover {
   background-color: #e9ecef;
 }
-
-/* === DEMOGRAFÍA === */
-#libro1 .item-hoja.activa {
-  border-left: 5px solid #3399cc;
-  background-color: #d8ecf7;
-  font-weight: 600;
-}
-
-/* === EDUCACIÓN === */
-#libro2 .item-hoja.activa {
-  border-left: 5px solid #e6b800;
-  background-color: #fff8d5;
-  font-weight: 600;
-}
-
-/* === TRABAJO === */
-#libro3 .item-hoja.activa {
-  border-left: 5px solid #9c5cd4;
-  background-color: #f0e6fb;
-  font-weight: 600;
-}
-
 
 .item-hoja .titulo {
   font-weight: bold;
@@ -1448,6 +1438,9 @@ Inicio
 
 /* Barra de pestañas horizontal */
 .nav-libros-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: flex-start; /* Alineadas a la izquierda */
 }
 
@@ -1455,13 +1448,32 @@ Inicio
 .pestana-libro {
   background-color: #e0e0e0;
   border: none;
-  padding: 10px 18px;
-  border-radius: 8px 8px 0 0;
   font-weight: 600;
   font-size:0.8rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   border-bottom: 3px solid transparent;
+  
+  flex: 1 1 calc(16.666% - 0.5rem); /* 100% / 6 columnas - espacio */
+  min-width: 150px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+  white-space: normal;
+}
+
+/* Si el espacio no alcanza → 3 pestañas por fila */
+@media (max-width: 992px) {
+  .pestana-libro {
+    flex: 1 1 calc(33.333% - 0.5rem);
+  }
+}
+
+/* En pantallas más chicas → 2 pestañas por fila */
+@media (max-width: 600px) {
+  .pestana-libro {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
 }
 
 .pestana-libro:hover {
@@ -1505,13 +1517,31 @@ Inicio
   color: #AB9FC6;
 }
 
-/* === ESTILO GENERAL PARA CONTENEDOR DE LIBROS === */
-.libro {
-  border: 1px solid;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+/*===================================*/
+
+
+/* === DEMOGRAFÍA === */
+#libro1 .item-hoja.activa {
+  border-left: 5px solid #3399cc;
+  background-color: #d8ecf7;
+  font-weight: 600;
 }
+
+/* === SALUD === */
+#libro2 .item-hoja.activa {
+  border-left: 5px solid #e6b800;
+  background-color: #fff8d5;
+  font-weight: 600;
+}
+
+/* === PREVISION SOCIAL === */
+#libro3 .item-hoja.activa {
+  border-left: 5px solid #9c5cd4;
+  background-color: #f0e6fb;
+  font-weight: 600;
+}
+
+/*====================================*/
 
 /* === DEMOGRAFÍA (libro1) === */
 #libro1,
@@ -1532,7 +1562,7 @@ Inicio
   border-radius: 0 0 8px 8px;
 }
 
-/* === EDUCACIÓN (libro2) === */
+/* === SALUD (libro2) === */
 #libro2,
 #libro2 .libro {
   background-color: #fef6e4;
@@ -1551,7 +1581,7 @@ Inicio
   border-radius: 0 0 8px 8px;
 }
 
-/* === TRABAJO (libro3) === */
+/* === PREVISION SOCIAL (libro3) === */
 #libro3,
 #libro3 .libro {
   background-color: #f3e8ff;
@@ -1568,6 +1598,107 @@ Inicio
 #libro3 .card-body {
   background-color: #ffffff;
   border-radius: 0 0 8px 8px;
+}
+
+/* === VIVIENDA === */
+.pestana-libro[data-libro="libro4"] {
+  background-color: #F3EADA;
+  color: #5C4326;
+}
+.pestana-libro[data-libro="libro4"].activo {
+  background-color: #ffffff;
+  border-bottom: 3px solid #A67C52;
+  color: #A67C52;
+}
+#libro4 .item-hoja.activa {
+  border-left: 5px solid #A67C52;
+  background-color: #f9f4ee;
+  font-weight: 600;
+}
+#libro4,
+#libro4 .libro {
+  background-color: #FDF9F3;
+  border-color: #E7D9C9;
+}
+#libro4 .card-header {
+  background-color: #A67C52;
+  color: #000000;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+#libro4 .card-body {
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+}
+
+/* === HOGARES === */
+.pestana-libro[data-libro="libro5"] {
+  background-color: #E6F3E6;
+  color: #336633;
+}
+.pestana-libro[data-libro="libro5"].activo {
+  background-color: #ffffff;
+  border-bottom: 3px solid #669966;
+  color: #669966;
+}
+#libro5 .item-hoja.activa {
+  border-left: 5px solid #669966;
+  background-color: #f0faf0;
+  font-weight: 600;
+}
+#libro5,
+#libro5 .libro {
+  background-color: #F5FBF5;
+  border-color: #D0E6D0;
+}
+#libro5 .card-header {
+  background-color: #669966;
+  color: #000000;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+#libro5 .card-body {
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+}
+
+/* === POBLACIÓN === */
+.pestana-libro[data-libro="libro6"] {
+  background-color: #FAE2E2;
+  color: #7A1F3D;
+}
+.pestana-libro[data-libro="libro6"].activo {
+  background-color: #ffffff;
+  border-bottom: 3px solid #CC3366;
+  color: #CC3366;
+}
+#libro6 .item-hoja.activa {
+  border-left: 5px solid #CC3366;
+  background-color: #fcecec;
+  font-weight: 600;
+}
+#libro6,
+#libro6 .libro {
+  background-color: #FFF4F6;
+  border-color: #ECCDD3;
+}
+#libro6 .card-header {
+  background-color: #CC3366;
+  color: #000000;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+#libro6 .card-body {
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+}
+
+/* === ESTILO GENERAL PARA CONTENEDOR DE LIBROS === */
+.libro {
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 /* CUADROS EMERGENTES*/
