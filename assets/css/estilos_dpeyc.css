@@ -1307,6 +1307,9 @@ Inicio
 
 .libro .container-fluid {
   flex: 1;
+  min-height: auto; /* Ajustá 90px al alto real del header */
+  display: flex;
+  flex-direction: column;
 }
 
 .libro .row {

@@ -1007,7 +1007,7 @@
                         <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
                           <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
                           <i class="fa fa-info-circle me-1"></i>
-                          Presiona el nombre de cualquier departamento de la leyenda para compararla con <strong>Santa Cruz</strong>.
+                          Presiona en una categoría de la leyenda para sumarla o quitarla del gráfico.
                         </div>
                       </div>
                     </div>
@@ -1060,7 +1060,7 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Viviendas según tipo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Cantidad de viviendas según tipo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
                                         <strong>Viviendas particulares:</strong> viviendas destinadas al alojamiento de uno o más hogares en
                                         donde las personas viven bajo un régimen de tipo familiar (sean o no parientes).<br>
@@ -1121,9 +1121,9 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Viviendas particulares según ocupación</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Viviendas según ocupación</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Muestra la proporción de viviendas que están habitadas o deshabitadas al momento del censo.
+                                        Muestra la proporción de viviendas particulares que están habitadas o deshabitadas al momento del censo.
                                       </span>
                                     </span>
                                   </div>
@@ -1139,16 +1139,15 @@
                           <!-- Columna 2-->
                           <div class="col-lg-6">
                               <!-- Bar Lateral Chart -->
-                              <div class="card shadow">
+                              <div class="card shadow mb-2">
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Viviendas no habitadas por tipo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Viviendas no habitadas según tipo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        <strong>Concepto:</strong> Expresa la cantidad de personas de edad inactiva (0-14 y 65 y más) por cada 100 
-                                        personas de edad teóricamente activa (15-64).<br>
-                                        <strong>Interpretación:</strong> Un valor más alto significa que hay más personas potencialmente dependientes del apoyo 
-                                        económico y social de la población activa.<br> 
+                                        Considerando exclusivamente a las viviendas desocupadas (sin personas presentes) se desagrega las mismas por tipo.
+                                        Para más información sobre la definición de cada tipo veáse Pág. 11 del <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" 
+                                        target="_blank" title="Glosario de Conceptos Censales"> Glosario de conceptos censales.</a> 
                                       </span>
                                     </span>
                                   </div>
@@ -1160,6 +1159,35 @@
                               </div>
                           </div>
                       </div>
+
+                      <!-- FILA 2-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Viviendas habitadas según tipo</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Considerando exclusivamente a las viviendas ocupadas (con personas presentes) se desagrega las mismas por tipo.
+                                        Para más información sobre la definición de cada tipo veáse Pág. 6 del <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" 
+                                        target="_blank" title="Glosario de Conceptos Censales"> Glosario de conceptos censales.</a>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="TipoViviendaOcupada"  style="height: 100%; min-height: 330px;"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
+
                     </div>
 
                     <div class="hoja" id="hoja3">
@@ -1237,7 +1265,7 @@
                 <div class="col-12 col-lg-3 order-1 order-lg-2 mb-3 mb-lg-0">
                   <div class="panel-hojas">
                     <div class="item-hoja activa" data-hoja="hoja1">
-                      <div class="titulo">Cobertura de salud</div>
+                      <div class="titulo">Hogares</div>
                       <div class="descripcion">
                         <div class="info-leyenda grafico-info alert alert-info text-center mx-3" role="alert">
                           <button type="button" class="btn-close float-end" aria-label="Cerrar"></button>
@@ -1307,15 +1335,17 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Tenencia de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Cantidad de hogares por departamento</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Refleja cómo se distribuye la población según el tipo de cobertura de salud declarada.
+                                        <strong>Concepto: </strong> un hogar en el censo es una persona o grupo de personas, parientes o no, 
+                                        que viven bajo un mismo techo con un régimen de tipo familiar y comparten sus gastos de comida. <br>Las 
+                                        personas que viven solas también constituyen un hogar particular. El personal doméstico no se contabiliza.
                                       </span>
                                     </span>
                                   </div>
                                   <!-- Grafico -->
                                   <div class="card-body">
-                                      <div id="salud"  style="height: 100%; min-height: 330px;"></div>
+                                      <div id="Hogares"  style="height: 100%; min-height: 330px;"></div>
                                   </div>
 
                               </div>
@@ -1329,22 +1359,49 @@
                                   <!-- Encabezado -->
                                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                       <span class="metadato-tooltip">
-                                      <strong>Tipo de cobertura de salud</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <strong>Viviendas por cantidad de hogares</strong><i class="fa fa-info-circle me-1 info-icon"></i>
                                       <span class="tooltip-content">
-                                        Considerando exclusivamente a la población con cobertura de salud, se analiza el porcentaje que cuenta con obra social/prepaga 
-                                        y programas o planes estatales.
+                                        Indica la cantidad de viviendas que contienen un hogar, dos hogares y tres o más hogares.
                                       </span>
                                     </span>
                                   </div>
                                   <!-- Grafico -->
                                   <div class="card-body">
-                                      <div id="tipoCobertura"  style="height: 100%; min-height: 330px;"></div>
+                                      <div id="HogaresPorVivienda"  style="height: 100%; min-height: 330px;"></div>
                                   </div>
 
                               </div>
                           </div>
                       </div>
                     </div>
+
+                    <!-- FILA 2-->
+                      <div class="row">
+                          <!-- Columna 1-->
+                          <div class="col-lg-12">
+
+                              <!-- Bar Lateral Chart -->
+                              <div class="card shadow">
+                                  <!-- Encabezado -->
+                                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                      <span class="metadato-tooltip">
+                                      <strong>Hogares según tipo de viviendas</strong><i class="fa fa-info-circle me-1 info-icon"></i>
+                                      <span class="tooltip-content">
+                                        Se muestra el porcentaje de hogares que reside en cada tipo de vivienda.
+                                        Para más información sobre la definición de cada tipo de vivienda veáse Pág. 6 del <a href="/assets/files/Redatam_Definiciones_de_la_base_de_datos.pdf" 
+                                        target="_blank" title="Glosario de Conceptos Censales"> Glosario de conceptos censales.</a>
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <!-- Grafico -->
+                                  <div class="card-body">
+                                      <div id="hogares_TipoVivienda"  style="height: 100%; min-height: 330px;"></div>
+                                  </div>
+
+                              </div>
+
+                          </div>
+                      </div>
 
                     <div class="hoja" id="hoja2">
                       <!-- FILA 1-->
@@ -1760,7 +1817,7 @@
               </div>
             </div>
 
-            <p>Explora las publicaciones temáticas de resultados definitivos en formato pdf y los cuadros en formato .xlsx. Además, se pone disposición 
+            <p>Explora las publicaciones temáticas de resultados definitivos en formato pdf y los cuadros en formato .xlsx. Además, se pone a disposición 
                     la <a href="https://redatam.indec.gob.ar/binarg/RpWebEngine.exe/Portal?BASE=CPV2022&lang=ESP" target="_blank" title="Base de datos Redatam 
                     del Censo Nacional de Población, Hogares y Viviendas 2022">base de datos Redatam </a> de viviendas particulares del Censo Nacional de Población, 
                     Hogares y Viviendas 2022 hasta el nivel de fracción y radio censal.</p>
@@ -1900,7 +1957,7 @@
                         <div class="col-lg-12 mb-4">
                             <h4>Verificá la <em>identidad</em> de tu <em>Encuestador/a</em></h4>
                             <p>Si recibe la visita de un encuestador en nombre de la DPEyC Santa Cruz puede verificar la identidad del 
-                              mismo y corroborar que se trata de un persona acreditada. Para ello, utilice la credencial con la 
+                              mismo y corroborar que se trata de una persona acreditada. Para ello, utilice la credencial con la 
                               cual se presentó y complete los siguientes campos. </p>
                         </div>
                         <div class="col-lg-6">

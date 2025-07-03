@@ -1151,7 +1151,6 @@ var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
       }
     ],
     xaxis: {
-      max: 100,
       labels: {
         formatter: function (val) {
           return parseInt(val) + "%";
@@ -1258,12 +1257,11 @@ var chart = new ApexCharts(document.querySelector("#piramideRC"), options);
         data: [14.1, 12.6, 12.9, 15.9, 11.8, 13.2, 12.8, 13.8]
       },
       {
-        name: "No percibe jubilación o pensión",
+        name: "No percibe jubilación o pensión", hidden: true,
         data: [85.9, 87.4, 87.1, 84.1, 88.2, 86.8, 87.2, 86.2]
       }
     ],
     xaxis: {
-      max: 100,
       labels: {
         formatter: function (val) {
           return parseInt(val) + "%";
@@ -1550,8 +1548,7 @@ var options = {
   var chart = new ApexCharts(document.querySelector("#ViviendasColectivas"), options);
   chart.render();
 
-
-  var options = {
+ var options = {
     chart: {
       type: 'bar',
       stacked: true,
@@ -1624,6 +1621,318 @@ var options = {
   };
 
   var chart = new ApexCharts(document.querySelector("#ViviendasNoHabitadas"), options);
+  chart.render();
+
+
+  var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: '100%'
+    },
+    series: [
+      {
+        name: "Casa",
+        data: [80.4, 85.6, 82.0, 77.7, 75.5, 84.9, 88.2, 89.0]
+      },
+      {
+        name: "Rancho", hidden: true,
+        data: [0.7, 0.3, 0.5, 0.9, 0.6, 0.2, 1.4, 0.6]
+      },
+      {
+        name: "Casilla", hidden: true,
+        data: [0.7, 0.6, 0.5, 0.8, 1.7, 0.4, 1.2, 0.3]
+      },
+      {
+        name: "Departamento", hidden: true,
+        data: [16.0, 11.3, 14.6, 18.9, 18.9, 12.2, 7.4, 7.1]
+      },
+      {
+        name: "Pieza en inquilinato/hotel/pensión", hidden: true,
+        data: [1.7, 1.9, 2.0, 1.4, 1.9, 2.1, 1.3, 1.9]
+      },
+      {
+        name: "Local no construido para habitación", hidden: true,
+        data: [0.3, 0.3, 0.3, 0.2, 0.5, 0.1, 0.4, 1.0]
+      },
+      {
+        name: "Vivienda móvil (casa rodante, carpa, etc.)", hidden: true,
+        data: [0.1, 0.0, 0.1, 0.1, 0.9, 0.0, 0.1, 0.1]
+      }
+    ],
+    xaxis: {
+      labels: {
+        formatter: function (val) {
+          return val < 10 ? val.toFixed(1) + "%" : val.toFixed(0) + "%";
+        }
+      },
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    yaxis: {
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ]
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toFixed(1) + "%";
+        }
+      }
+    },
+    colors: ['#FEB019','#00E396', '#775DD0', '#FF4560', '#3F51B5', '#F86624', '#4CAF50'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val > 0 ? val.toFixed(1) : "";
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#TipoViviendaOcupada"), options);
+  chart.render();
+
+/* ================================== HOGARES ================================================*/
+
+  var options = {
+    chart: {
+      type: 'bar',
+      height: '100%',
+      stacked: false
+    },
+    series: [
+      {
+        name: "Hogares",
+        data: [5528, 44139, 48687, 9499, 4594, 4577, 2238]
+      }
+    ],
+    yaxis: {
+      categories: [
+        "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        style: {
+          fontSize: '13px',
+          fontWeight: 500
+        }
+      }
+    },
+    xaxis: {
+      title: {
+        text: "Cantidad de hogares"
+      },
+      categories: [
+        "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        formatter: function (val) {
+          return val.toLocaleString('es-AR');
+        }
+      }
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        barHeight: '70%',
+        dataLabels: {
+          position: 'center'
+        }
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toLocaleString('es-AR') + " hogares";
+        }
+      }
+    },
+    colors: ['#00E396', '#008FFB'],
+    dataLabels: {
+      enabled: false
+    },
+    legend: {
+      position: 'bottom'
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#Hogares"), options);
+  chart.render();
+
+
+  var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: '100%'
+    },
+    series: [
+      {
+        name: "Un hogar", hidden: true,
+        data: [5454, 43330, 47555, 9318, 4518, 4526, 2172]
+      },
+      {
+        name: "Dos hogares",
+        data: [37, 383, 541, 86, 38, 24, 33]
+      },
+      {
+        name: "Tres o más hogares", hidden: true,
+        data: [0, 14, 14, 3, 0, 1, 0]
+      }
+    ],
+    yaxis: {
+      categories: [
+        "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        style: {
+          fontSize: '13px',
+          fontWeight: 500
+        }
+      }
+    },
+    xaxis: {
+      title: {
+        text: "Cantidad de viviendas"
+      },
+      categories: [
+        "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        formatter: function (val) {
+          return val.toLocaleString('es-AR');
+        }
+      }
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        barHeight: '70%'
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toLocaleString('es-AR') + " viviendas";
+        }
+      }
+    },
+    colors: ['#00E396', '#FEB019', '#FF4560'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#000000']
+      },
+      formatter: function (val) {
+        return val > 0 ? val.toLocaleString('es-AR') : "";
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#HogaresPorVivienda"), options);
+  chart.render();
+
+var options = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      height: '100%'
+    },
+    series: [
+      {
+        name: "Casa", hidden: true,
+        data: [80.4, 85.5, 82.2, 77.7, 75.5, 84.9, 88.2, 88.9]
+      },
+      {
+        name: "Rancho", hidden: true,
+        data: [0.7, 0.3, 0.5, 1.0, 0.6, 0.2, 1.4, 0.6]
+      },
+      {
+        name: "Casilla", hidden: true,
+        data: [0.7, 0.6, 0.5, 0.8, 1.7, 0.4, 1.2, 0.3]
+      },
+      {
+        name: "Departamento",
+        data: [16.1, 11.4, 14.4, 18.8, 18.9, 12.3, 7.4, 7.0]
+      },
+      {
+        name: "Pieza en inquilinato/hotel/pensión", hidden: true,
+        data: [1.7, 1.9, 2.0, 1.4, 1.9, 2.1, 1.3, 1.9]
+      },
+      {
+        name: "Local no construido para habitación", hidden: true,
+        data: [0.3, 0.3, 0.3, 0.2, 0.5, 0.1, 0.4, 1.2]
+      },
+      {
+        name: "Vivienda móvil (casa rodante, carpa, etc.)", hidden: true,
+        data: [0.1, 0.0, 0.1, 0.1, 0.9, 0.0, 0.1, 0.1]
+      }
+    ],
+    xaxis: {
+      categories: [
+        "Santa Cruz","Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        formatter: function (val) {
+          return val < 10 ? val.toFixed(1) + "%" : val.toFixed(0) + "%";
+        }
+      }
+    },
+    yaxis: {
+      categories: [
+        "Santa Cruz", "Corpen Aike", "Deseado", "Güer Aike",
+        "Lago Argentino", "Lago Buenos Aires", "Magallanes", "Río Chico"
+      ],
+      labels: {
+        style: {
+          fontSize: '13px',
+          fontWeight: 500
+        }
+      }
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true
+      }
+    },
+    colors: ['#FEB019','#00E396', '#775DD0', '#FF4560', '#3F51B5', '#F86624', '#4CAF50'],
+    legend: {
+      position: 'bottom'
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#FFF']
+      },
+      formatter: function (val) {
+        return val > 0 ? val.toFixed(1) + "%" : "";
+      }
+    }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#hogares_TipoVivienda"), options);
   chart.render();
   
 /*TRABAJO E INGRESOS*/
