@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+#sidebar h3 {
+  margin-top: 0;
+}
+
+#variable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+#variable-list li {
+  padding: 6px;
+  margin-bottom: 4px;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#variable-list li.active {
+  background: #4285f4;
+  color: white;
+}
+
+#sidebar label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#sidebar input[type=range] {
+  width: 100%;
+}
+
+#sidebar select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+
+.legend {
+  background: white;
+  padding: 8px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+.leaflet-container { background: #ddd; }
+.leaflet-control-zoom {
+  position: absolute !important;
+  top: 220px !important;
+  right: 10px !important;
+  left: auto !important;
+}
+#info-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  display: none;
+  max-width: 250px;
+}
+
+/* =================== ACORDION =================== */
+
+/* .accordion .accordion-header {
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-weight: bold;
+}
+
+.accordion .accordion-content {
+  display: none;
+  list-style-type: none;
+  padding-left: 15px;
+  margin: 0;
+}
+
+.accordion .accordion-content li {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.accordion .accordion-content li.active {
+  font-weight: bold;
+  color: #007BFF;
+} */
+
+.accordion-header {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header.active-thematic {
+  background-color: #d0e7ff; /* Color temático cuando contiene capa activa */
+}
+
+.accordion-content {
+  display: none;
+  list-style: none;
+  padding: 5px 15px;
+  margin: 0;
+}
+
+.accordion-content.show {
+  display: block;
+}
+
+.variable-list li {
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.variable-list li.active-primary {
+  background-color: #e0f0ff;
+  font-weight: bold;
+}
+
+.variable-list li.active-overlay {
+  background-color: #e7fbe7;
+  font-style: italic;
+}
+
+.icon-indicator {
+  font-size: 1.2em;
+  margin-left: 8px;
+  display: inline-block;
+}
+
+
+/* =============== SELECCION DE CAPAS ==================*/
+li[data-variable] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.layer-label {
+  flex-grow: 1;
+}
+
+.icon-indicator {
+  font-size: 1.2em;
+  margin-left: 8px;
+  display: inline-block;
+}

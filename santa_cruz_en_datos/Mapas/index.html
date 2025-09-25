@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Mapa Geoestadístico - Santa Cruz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+<div id="sidebar">
+  <h3>Mapa Geoestadístico</h3>
+  <div id="layer-section">
+  <h4>Capas temáticas</h4>
+  <div class="accordion">
+
+    <div class="accordion-item">
+      <button class="accordion-header">Demografía</button>
+      <ul class="accordion-content variable-list">
+        <li data-variable="totalpobl">Población total</li>
+        <li data-variable="varon">Varones</li>
+        <li data-variable="mujer">Mujeres</li>
+      </ul>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Hogares</button>
+      <ul class="accordion-content variable-list">
+        <li data-variable="hogares">Hogares</li>
+      </ul>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Viviendas</button>
+      <ul class="accordion-content variable-list">
+        <li data-variable="viviendasp">Viviendas particulares</li>
+        <li data-variable="viv_part_h">Viviendas particulares habitadas</li>
+      </ul>
+    </div>
+  
+  </div>
+    <p style="font-size: 0.8em; color: gray;">
+    🔘 Capa principal <br> 🟦 Superposición (Shift + clic)
+    </p>
+  </div>
+
+  <ul id="extra-options">
+      <li data-variable="none" class="active">Quitar capas</li>
+    </ul>
+
+    <label for="opacity-slider"><strong>Opacidad capa principal</strong></label>
+    <input type="range" id="opacity-slider" min="0" max="1" step="0.05" value="0.7">
+  <label for="overlay-opacity-slider"><strong>Opacidad superposición</strong></label>
+  <input type="range" id="overlay-opacity-slider" min="0" max="1" step="0.05" value="0.35">
+</div>
+
+<div id="map"></div>
+<div id="info-box"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="mapa.js"></script>
+
+<script src="acordeon.js"></script>
+</body>
+</html>

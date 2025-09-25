@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa Estadístico - Santa Cruz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <h3>Mapa de Variables Estadísticas - Provincia de Santa Cruz</h3>
+  <div id="map"></div>
+
+  <!-- Selector de variable -->
+  <div class="variable-selector">
+    <label for="variable">Seleccionar variable:</label>
+    <select id="variable">
+      <option value="totalpobl" selected>Total de Población</option>
+      <option value="varon">Varones</option>
+      <option value="mujer">Mujeres</option>
+      <option value="hogares">Hogares</option>
+      <option value="viviendasp">Viviendas</option>
+      <option value="viv_part_h">Viviendas habitadas</option>
+    </select>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    let map = L.map('map').setView([-50, -70], 6);
+
+    // Capas base
+    const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19, attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    const cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© CartoDB', subdomains: 'abcd', maxZoom: 19
+    });
+
+    const esriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '© Esri', maxZoom: 19
+    });
+
+    const baseMaps = {
+      "OpenStreetMap": osm,
+      "CartoDB Light": cartoLight,
+      "Esri Satelital": esriSat
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+
+    // Variables y capas
+    let geoLayer;
+    let currentVariable = 'totalpobl';
+    let geoData;
+
+    // Colores dinámicos por variable
+    function getColor(value) {
+      return value > 2000 ? '#800026' :
+             value > 1500 ? '#BD0026' :
+             value > 1000 ? '#E31A1C' :
+             value > 500  ? '#FC4E2A' :
+             value > 200  ? '#FD8D3C' :
+             value > 0    ? '#FEB24C' :
+                            '#FFEDA0';
+    }
+
+    function style(feature) {
+      return {
+        fillColor: getColor(feature.properties[currentVariable]),
+        weight: 1,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+      };
+    }
+
+    function onEachFeature(feature, layer) {
+      const p = feature.properties;
+      const popupContent = `
+        <strong>${p.toponimo_i}</strong><br>
+        <b>Link:</b> ${p.link}<br><hr>
+        👨 Varones: ${p.varon}<br>
+        👩 Mujeres: ${p.mujer}<br>
+        👥 Total: ${p.totalpobl}<br>
+        🏠 Hogares: ${p.hogares}<br>
+        🏘️ Viviendas: ${p.viviendasp}<br>
+        🛏️ Habitadas: ${p.viv_part_h}
+      `;
+      layer.bindPopup(popupContent);
+    }
+
+    function updateMap() {
+      if (geoLayer) {
+        map.removeLayer(geoLayer);
+      }
+
+      geoLayer = L.geoJSON(geoData, {
+        style: style,
+        onEachFeature: onEachFeature
+      }).addTo(map);
+
+      const bounds = geoLayer.getBounds();
+      map.fitBounds(bounds);
+      map.setMaxBounds(bounds);
+      updateLegend();
+    }
+
+    // Leyenda dinámica
+    const legend = L.control({ position: 'bottomright' });
+
+    legend.onAdd = function (map) {
+      const div = L.DomUtil.create('div', 'info legend');
+      const grades = [0, 200, 500, 1000, 1500, 2000];
+      const labels = [`<strong>${getVariableLabel(currentVariable)}</strong><br>`];
+
+      for (let i = 0; i < grades.length; i++) {
+        const from = grades[i];
+        const to = grades[i + 1];
+        labels.push(
+          `<i style="background:${getColor(from)}"></i> ` +
+          from + (to ? `&ndash;${to}` : '+')
+        );
+      }
+
+      div.innerHTML = labels.join('<br>');
+      return div;
+    };
+
+    function updateLegend() {
+      legend.remove();
+      legend.addTo(map);
+    }
+
+    function getVariableLabel(code) {
+      const labels = {
+        totalpobl: "Total de Población",
+        varon: "Varones",
+        mujer: "Mujeres",
+        hogares: "Hogares",
+        viviendasp: "Viviendas particulares",
+        viv_part_h: "Viviendas habitadas"
+      };
+      return labels[code] || code;
+    }
+
+    // Cambiar variable desde el selector
+    document.getElementById('variable').addEventListener('change', function (e) {
+      currentVariable = e.target.value;
+      updateMap();
+    });
+
+    // Cargar archivo GeoJSON
+    fetch('radios_santacruz.geojson')
+      .then(res => res.json())
+      .then(data => {
+        geoData = data;
+        updateMap();
+      });
+  </script>
+</body>
+</html>
